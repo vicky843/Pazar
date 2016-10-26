@@ -86,7 +86,7 @@ text-shadow: 1px 1px 0px #202020
     </div>
   </div>
 </nav>
-<p>this is header</p>
+
 
 
 </body>

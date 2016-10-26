@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class Pazar {
-@RequestMapping("/")
+@RequestMapping("/")//this is displaying header and footer.//
 public String home()
 {
-	return "index";
+	return "index";//it indicates index.jsp.
 	}
 
 }
