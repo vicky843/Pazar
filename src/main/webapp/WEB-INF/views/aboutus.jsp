@@ -5,13 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style >
-p{
-background-color: red;
-text-align: justify;
-}
-
-</style>
 </head>
 <body>
 <p>Penty went on a sabbatical from acting and made a comeback in 2016

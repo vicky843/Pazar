@@ -25,6 +25,7 @@ text-align: center;}
           <span class="glyphicon glyphicon-thumbs-up"></span>
         </a>
       </p>
+      
   <p>Follow us on <a href="http://www.Twitter.com">Twitter</a></p>
   <p>Bootstrap Theme Made By <a href="http://www.w3schools.com">SAITEJA</a></p>
 </footer>
