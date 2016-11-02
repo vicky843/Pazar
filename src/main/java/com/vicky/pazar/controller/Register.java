@@ -2,13 +2,14 @@ package com.vicky.pazar.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import com.vicky.pazar.model.Registermodel;
 
@@ -21,18 +22,17 @@ public class Register {
 	
 	
 		@RequestMapping(method=RequestMethod.GET)
-		 public String viewRegistration(Map<String, Object> model) {
-	      Registermodel   regForm = new Registermodel();    
-	       
-			model.put("regForm", regForm);
+		 public String viewRegistration(ModelMap m) {
 	         
+	      m.addAttribute("regForm",new Registermodel());
+	      m.addAttribute("clickregsss",1);  
 			  List<String> gendertype = new ArrayList<>();
-	        gendertype.add("Developer");
-	        gendertype.add("Designer");
+	        gendertype.add("Male");
+	        gendertype.add("Female");
 	        
-	        model.put("gendertype", gendertype);
+	        m.addAttribute("gendertype", gendertype);
 	         
-			         
+			     
 			return "index";
 		}
 
