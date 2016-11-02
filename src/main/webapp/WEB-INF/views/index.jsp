@@ -8,7 +8,7 @@
 
 <k:when test="${clickloginsss == 1}">
 <jsp:include page="loginpage.jsp"></jsp:include>
-<h2> this is login page</h2>
+
 </k:when>
 <k:when test="${clickregsss == 1}">
 <jsp:include page="register.jsp"></jsp:include>
@@ -21,6 +21,8 @@
 <k:when test="${home ==1 }">
 <jsp:include page="home.jsp"></jsp:include>
 </k:when>
+<k:when test="${contact==1 }">
+<jsp:include page="contactus.jsp"></jsp:include></k:when>
 <k:otherwise>
 <jsp:include page="carousel.jsp"></jsp:include></k:otherwise>
 </k:choose>

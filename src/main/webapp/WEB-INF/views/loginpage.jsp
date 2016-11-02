@@ -1,15 +1,38 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="k" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="k"%>
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login page</title>
-</head>
+<head></head>
 <body>
-<p>this is login page
-</p>
+<k:form action="loginpage" method="post" commandName="loginForm">
+<table align:"center">
+<tr>
+<td>Login page</td>
+</tr>
+<tr>
+<td>User name</td>
+<td><k:input path="username" type="text"></k:input>
+</td>
+</tr>
+<br>
+<tr>
+<td>Password</td>
+<td><k:input path="password" type="password"></k:input>
+</td>
+</tr><tr>
+ <td><k:checkbox path="" value="Remember Me"  label="Remember Me"></k:checkbox></td>
+</tr>
+<tr>
+
+<td><k:button path="submit" >Login</k:button>
+</td>
+
+</tr>
+
+</table>
+
+
+
+</k:form>
 
 
 </body>
