@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vicky.pazar.model.LoginFormmodel;
+import com.vicky.pazar.model.Registermodel;
 
 @Controller
 @RequestMapping(value="/loginpage")
@@ -30,5 +31,12 @@ public class Loginform {
 		System.out.println(login.getPassword());
 		return "index";
 		
+	}
+	@RequestMapping("/register")
+	 public String viewRegistration(ModelMap m) {
+        
+     
+     m.addAttribute("clickregsss",1);  
+return "index";
 	}
 }

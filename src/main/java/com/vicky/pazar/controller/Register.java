@@ -2,7 +2,7 @@ package com.vicky.pazar.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,20 +31,19 @@ public class Register {
 	        gendertype.add("Female");
 	        
 	        m.addAttribute("gendertype", gendertype);
-	         
-			     
-			return "index";
+	    	return "index";
 		}
 
+
 		@RequestMapping(method=RequestMethod.POST)
-		public String loginsucces(@ModelAttribute("regForm")Registermodel reg)
+		public String loginsucces(@ModelAttribute("regForm")Registermodel reg,  Map<String, Object> model)
 		{
 			System.out.println(reg.getEmail());
 			System.out.println(reg.getPassword());
 			System.out.println(reg.getUsername());
 			System.out.println(reg.getBirthdate());
 			System.out.println(reg.getGender());
-			
+		
 			return "index";
 			
 		}

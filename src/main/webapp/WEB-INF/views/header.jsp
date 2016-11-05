@@ -8,7 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-  body {
+  
+  .body {
+  background-color:"white";
       position: relative;
   }
   .affix {
@@ -27,11 +29,12 @@ box-shadow: 5px 5px 10px #202020
   .affix ~ .container-fluid {
      position: relative;
      top: 50px;
+   background-color: white;  
   }
     
   </style>
 </head>
-<img  class="brand" alt="GIF" src="insta1.gif">
+<img  class="brand" alt="GIF" src="images/insta.gif" >
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 
@@ -59,13 +62,13 @@ box-shadow: 5px 5px 10px #202020
             </ul>
           </li>
         </ul>
-        <form  class="navbar-form">
+        <form  class="navbar-form pull-left">
         <input type="text" class="form-control" placeholder="Search Here..">
         <button type="submit" class="btn btn-default">
         <span class="glyphicon glyphicon-search "></span>
         </button>
         </form>
-         <ul class="nav navbar-nav navbar-right">
+         <ul class="nav navbar-nav pull-right">
         
         <li><a href="register"   ><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a href="loginpage" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

@@ -28,6 +28,7 @@ text-align: center;}
       
   <p>Follow us on <a href="http://www.Twitter.com">Twitter</a></p>
   <p>Bootstrap Theme Made By <a href="http://www.w3schools.com">SAITEJA</a></p>
+
 </footer>
 </div>
 

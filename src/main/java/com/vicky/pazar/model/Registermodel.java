@@ -7,6 +7,9 @@ public class Registermodel {
 	public String email;
 	public String birthdate;
 	public String gender;
+    public String location;    
+
+	
 	public String getGender() {
 		return gender;
 	}
