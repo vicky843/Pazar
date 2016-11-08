@@ -11,10 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 <p>Penty went on a sabbatical from acting and made a comeback in 2016
  with the romantic comedy Happy Bhag Jayegi, playing the titular role.
   Her performance was well received and film went on be a surprise hit at the box-office.
    Penty is an active celebrity endorser and has been associated with brands
     including TRESemmé and Nokia.</p>
+    </div>
 </body>
 </html>
