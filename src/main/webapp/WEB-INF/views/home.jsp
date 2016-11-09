@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->

@@ -9,9 +9,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style>
+#m1
+{
+background-image: url("img/vegetables.jpg");
+}
+
+</style>
 </head>
-<body>
-<div class="container">
+<body id="m1">
+<div class="container-fluid">
+<img src="img/vegetables.jpg"  alt="aboutus" ><br>
 <p>Penty went on a sabbatical from acting and made a comeback in 2016
  with the romantic comedy Happy Bhag Jayegi, playing the titular role.
   Her performance was well received and film went on be a surprise hit at the box-office.

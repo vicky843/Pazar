@@ -39,7 +39,8 @@ width:40%;
 <br>
                   <b>  Gender:</b>
                    <k:select path="gender" items="${gendertype}"/><br><br>	
-                  
+                  <b>Address</b>
+                  <k:input path="location" class="form-control" ></k:input>
                    <k:checkbox path="" value="Remember Me"  label="I agree the terms and conditions"/><br><br>
 <k:button type="submit" class="btn btn-success">Create an account</k:button>
 <h4>Already have an Account?<a href="loginpage">Click Here</a></h4>

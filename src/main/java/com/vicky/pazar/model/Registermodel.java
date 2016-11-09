@@ -1,15 +1,33 @@
 package com.vicky.pazar.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="register")
 public class Registermodel {
-
+@Id
 	public String username;
+@Column
 	public String password;
+@Column
 	public String email;
-	public String birthdate;
-	public String gender;
-    public String location;    
-
+@Column	
+public String birthdate;
+@Column	
+public String gender;
+    
+@Column
+public String location;
 	
+	public String getLocation() {
+	return location;
+}
+public void setLocation(String location) {
+	this.location = location;
+}
 	public String getGender() {
 		return gender;
 	}
