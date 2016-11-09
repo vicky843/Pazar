@@ -72,6 +72,7 @@ box-shadow: 5px 5px 10px #202020
         
         <li><a href="register"   ><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a href="loginpage" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <li><a href="category" ><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
       </ul>
     </div>
   </div>

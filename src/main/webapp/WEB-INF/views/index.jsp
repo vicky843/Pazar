@@ -10,7 +10,7 @@
 <jsp:include page="loginpage.jsp"></jsp:include>
 
 </k:when>
-<k:when test="${clickregsss == 1}">//
+<k:when test="${clickregsss == 1}">
 <jsp:include page="register.jsp"></jsp:include>
 
 </k:when>

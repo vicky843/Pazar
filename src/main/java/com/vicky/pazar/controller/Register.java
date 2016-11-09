@@ -41,6 +41,7 @@ public class Register {
 		@RequestMapping(method=RequestMethod.POST)
 		public String loginsucces(@ModelAttribute("regForm")Registermodel reg,  Map<String, Object> model)
 		{
+			//System.out.println(reg.getEmail());
 			rgs.save(reg);
 		
 			return "index";

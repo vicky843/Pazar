@@ -1,7 +1,25 @@
 package com.vicky.pazar.model;
 
-public class Category {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+
+
+@Entity
+@Table(name="category")
+@Component
+public class Categorymodel {
+	@Id
+	public String catid;
+	@Column
+	public String catname;
+	@Column
+	public String catdesc;
+	
 	public String getCatid() {
 		return catid;
 	}
@@ -20,8 +38,6 @@ public class Category {
 	public void setCatdesc(String catdesc) {
 		this.catdesc = catdesc;
 	}
-	public String catid;
-	public String catname;
-	public String catdesc;
+	
 	
 }
