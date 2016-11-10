@@ -11,6 +11,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <head>
 <style>
+.text-right{text-align:right}
 .body{
  position: relative;}
 .footer
@@ -61,8 +62,8 @@ text-align: center;
 
 </div>
 <div class="col-sm-2">
-<a class="up-arrow" href="home" data-toggle="tooltip" title="BACK TO TOP"/>
-<span class="glyphicon glyphicon-chevron-up"></span></div>
+<div class="text-right" style="padding:0 15px 5px 0"><a href="#"><span class="glyphicon glyphicon-circle-arrow-up"></span> Top of the Page</a></div>
+
 </div>
 
 
@@ -73,7 +74,7 @@ text-align: center;
 
 
 </div>
-
+</div>
 </footer><!-- end of footer -->
 <script>
 $(document).ready(function(){

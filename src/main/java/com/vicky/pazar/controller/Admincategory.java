@@ -20,7 +20,7 @@ CatDAO cats;
 @RequestMapping(method=RequestMethod.GET)
 public String adminget(ModelMap m){
 	m.addAttribute("catForm",new Categorymodel());
-	
+	m.addAttribute("clickcat",1);
 	return "category";
 	
 }

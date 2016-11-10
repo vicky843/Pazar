@@ -32,7 +32,7 @@
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <center><img src="1.jpg" alt="Chania" width="460" height="345"></center>
+        <img src="images/carousel1.jpg" alt="Chania" width="460" height="345">
         <div class="carousel-caption">
           <h3>Fruits</h3>
           
@@ -40,7 +40,7 @@
       </div>
 
       <div class="item">
-       <center> <img src="2.jpg" alt="Chania" width="460" height="345"></center>
+       <img src="images/carousel2.jpg" alt="Chania" width="460" height="345">
         <div class="carousel-caption">
           <h3>Vegetables</h3>
           
@@ -48,7 +48,7 @@
       </div>
     
       <div class="item">
-        <center><img src="3.png" alt="Flower" width="460" height="345"></center>
+ <img src="3.png" alt="Flower" width="460" height="345">
         <div class="carousel-caption">
           <h3>General Items</h3>
         
@@ -56,7 +56,7 @@
       </div>
 
       <div class="item">
-        <center><img src="4.jpg" alt="Flower" width="1000px" height="345"></center>
+        <img src="4.jpg" alt="Flower" width="1000px" height="345">
         <div class="carousel-caption">
           <h3>Pulses</h3>
           
