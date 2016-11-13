@@ -20,15 +20,16 @@ public String aboutt(Model m)//it will navigate to aboutus
 return "index";
 }
 @RequestMapping("/contactus")
-public String contact(Model m)
+public String contact(Model m)//it will navigate to contactus
 {
 m.addAttribute("contact", 1);
 return "index";
 }
 @RequestMapping("/home")
-public String homes(Model m)//it will navigate to aboutus
+public String homes(Model m)//it will navigate to carousel
 {
 	m.addAttribute("home", 1);
 return "index";
 }
+
 }

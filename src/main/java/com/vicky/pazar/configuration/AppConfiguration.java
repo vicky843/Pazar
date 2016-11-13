@@ -1,7 +1,7 @@
 package com.vicky.pazar.configuration;
 
 import java.util.Properties;
-import java.util.function.Supplier;
+
 
 import javax.sql.DataSource;
 
@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.vicky.pazar.controller.Register;
 import com.vicky.pazar.model.Categorymodel;
+import com.vicky.pazar.model.Productmodel;
 import com.vicky.pazar.model.Registermodel;
 import com.vicky.pazar.model.Suppliermodel;
 
@@ -53,6 +54,7 @@ public  SessionFactory getSessionFactory(DataSource dataSource)
 	sessionBuilder.addAnnotatedClass(Registermodel.class);
     sessionBuilder.addAnnotatedClass(Categorymodel.class);
     sessionBuilder.addAnnotatedClass(Suppliermodel.class);
+    sessionBuilder.addAnnotatedClass(Productmodel.class);
 	return sessionBuilder.buildSessionFactory();
 }
 @Autowired

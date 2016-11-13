@@ -21,6 +21,7 @@ public class Suppliermodel {
 	public String supemail;
 	@Column
 	public String supnumber;
+	
 	public String getSupid() {
 		return supid;
 	}

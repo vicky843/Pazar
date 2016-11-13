@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav">
         
         <li class="dropdown">
-          <a  class="active" href="category">Category</a>
+          <a   href="category">Category</a>
           
         </li>
         <li><a  class="active" href="supplier">Supplier</a></li>
@@ -36,10 +36,15 @@
     </div>
   </div>
 </nav>
-<div class="container">
 
-<div class="col-sm-4 col-sm-offset-4">
 <div class="jumbotron">
+<div class="jumbotron text-center">
+<div class="container">
+  <h1>Welcome to Admin</h1></div></div>
+<div class="container">
+<div class="col-sm-5 col-sm-offset-4">
+<div class="jumbotron">
+<h3> <b>Enter Supplier details</b></h3><br>
 <k:form action="" method="post" commandName="supForm">
 
 
@@ -58,6 +63,6 @@
 
 </k:form><!-- end of form -->
 </div>
-</div></div>
+</div></div></div>
 </body>
 </html>

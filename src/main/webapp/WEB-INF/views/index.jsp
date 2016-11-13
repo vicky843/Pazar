@@ -19,11 +19,9 @@
 <jsp:include page="aboutus.jsp"></jsp:include>
 </k:when>
 <k:when test="${home ==1 }">
-<jsp:include page="home.jsp"></jsp:include>
+<jsp:include page="carousel.jsp"></jsp:include>
 </k:when>
-<k:when test="${clickcat == 1 }">
-<jsp:include page="category.jsp"></jsp:include>
-</k:when>
+
 <k:when test="${contact==1 }">
 <jsp:include page="contactus.jsp"></jsp:include></k:when>
 <k:otherwise>

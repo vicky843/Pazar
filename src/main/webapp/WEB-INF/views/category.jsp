@@ -29,7 +29,7 @@
           <a  class="active" href="category">Category</a>
           
         </li>
-        <li><a  class="active" href="supplier">Supplier</a></li>
+        <li><a   href="supplier">Supplier</a></li>
         <li><a href="product">Products</a></li>
       </ul>
       
