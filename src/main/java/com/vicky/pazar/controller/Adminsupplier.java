@@ -21,6 +21,7 @@ SupDAO supes;
 public String sup(ModelMap m){
 	
 	m.addAttribute("supForm",new Suppliermodel());
+	m.addAttribute("clicksup",1);
 	return "supplier";
 }
 	@Transactional

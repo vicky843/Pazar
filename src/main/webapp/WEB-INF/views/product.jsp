@@ -49,12 +49,12 @@
 
 
 
-<k:input path="proid" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
+<k:input path="proid" required="true" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
 
-<k:input path="proname" class="form-control" placeholder="Enter Productname" type="text"></k:input><br>
-<k:input path="proprice" class="form-control" placeholder="Enter Productprice" type="text" /><br>
-<k:input path="proscatid" class="form-control" placeholder="Enter Pro_Catid" type="text" /><br>
-<k:input path="prossupid" class="form-control" placeholder="Enter Pro_Supid" type="text" /><br>
+<k:input path="proname" required="true" class="form-control" placeholder="Enter Productname" type="text"></k:input><br>
+<k:input path="proprice" required="true" class="form-control" placeholder="Enter Productprice" type="text" /><br>
+<k:input path="proscatid" required="true" class="form-control" placeholder="Enter Pro_Catid" type="text" /><br>
+<k:input path="prossupid" required="true" class="form-control" placeholder="Enter Pro_Supid" type="text" /><br>
 <br>
 
 

@@ -21,14 +21,14 @@ CatDAO cats;
 public String adminget(ModelMap m){
 	m.addAttribute("catForm",new Categorymodel());
 	m.addAttribute("clickcat",1);
-	return "category";
+	return "adminindex";
 	
 }
 @Transactional
 @RequestMapping(method=RequestMethod.POST)
 public String admin(@ModelAttribute("catForm")Categorymodel cat){
 	cats.save(cat);
-	return "category";
+	return "adminindex";
 	
 }
 }

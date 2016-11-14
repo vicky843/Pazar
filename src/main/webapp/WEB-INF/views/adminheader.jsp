@@ -46,49 +46,25 @@ box-shadow: 5px 5px 10px #202020
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand visible-xs"  style="color: #000000;"><b>PAZAR Admin</b></a>
-     
+      <a class="navbar-brand" href="home">HOME</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-     <a class="navbar-brand" href="home">HOME</a>
       <ul class="nav navbar-nav">
         
         <li class="dropdown">
-          <a  class="active" href="category">Category</a>
+          <a   href="category">Category</a>
           
         </li>
         <li><a   href="supplier">Supplier</a></li>
-        <li><a href="product">Products</a></li>
+        <li><a  class="product" href="product">Products</a></li>
       </ul>
       
     </div>
   </div>
 </nav>
 
-<div class="jumbotron text-center">
-<div class="container">
-  <h1>Welcome to Admin</h1></div></div>
-<div class="container">
-<div class="col-sm-5 col-sm-offset-4">
-<div class="jumbotron">
-<h3> <b>Enter Category details</b></h3><br>
-<k:form action="" method="post" commandName="catForm">
-
-<k:input path="catid" required="true" class="form-control" placeholder="Enter Categoryid" type="text"></k:input><br>
-
-<k:input path="catname" required="true" class="form-control" placeholder="Enter Categoryname" type="text"></k:input><br>
-<k:input path="catdesc" required="true" class="form-control" placeholder="Enter Categorydesc" type="text" />
-<br>
 
 
-<k:button path="submit" class="btn btn-success" onclick="myFunction()">Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-<k:button  type="reset" value="reset"  class="btn btn-danger">Reset</k:button>
-
-
-</k:form><!-- end of form -->
-</div>
-</div></div>
 </body>
 </html>
 

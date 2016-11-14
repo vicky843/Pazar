@@ -52,10 +52,10 @@
 
 <k:input path="supid" class="form-control" placeholder="supplierid" type="text"></k:input><br>
 
-<k:input path="supname" class="form-control" placeholder="suppliername" type="text"></k:input><br>
-<k:input path="supaddress" class="form-control" placeholder="supplieraddress" type="text" ></k:input><br>
-<k:input path="supnumber" class="form-control" placeholder="suppliernumber" type="text" ></k:input><br>
-<k:input path="supemail" class="form-control" placeholder="supplieremail" type="text" ></k:input><br>
+<k:input path="supname" required="true" class="form-control" placeholder="suppliername" type="text"></k:input><br>
+<k:input path="supaddress"  required="true" class="form-control" placeholder="supplieraddress" type="text" ></k:input><br>
+<k:input path="supnumber" required="true" class="form-control" placeholder="suppliernumber" type="text" ></k:input><br>
+<k:input path="supemail" required="true" class="form-control" placeholder="supplieremail" type="text" ></k:input><br>
 <br><br>
 <k:button path="submit" class="btn btn-success">Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <k:button path="reset" class="btn btn-danger">Reset</k:button>
