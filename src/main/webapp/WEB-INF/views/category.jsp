@@ -20,9 +20,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="home">HOME</a>
+      <a class="navbar-brand visible-xs"  style="color: #000000;"><b>PAZAR Admin</b></a>
+     
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+     <a class="navbar-brand" href="home">HOME</a>
       <ul class="nav navbar-nav">
         
         <li class="dropdown">

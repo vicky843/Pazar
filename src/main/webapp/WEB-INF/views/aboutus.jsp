@@ -12,14 +12,14 @@
 <style>
 #m1
 {
-background-image: url("img/vegetables.jpg");
+background-image: url("images/vegetables.jpg");
 }
 
 </style>
 </head>
 <body id="m1">
 <div class="container-fluid">
-<img src="img/vegetables.jpg"  alt="aboutus" ><br>
+<img src="images/vegetables.jpg"  alt="aboutus" ><br>
 <p>Penty went on a sabbatical from acting and made a comeback in 2016
  with the romantic comedy Happy Bhag Jayegi, playing the titular role.
   Her performance was well received and film went on be a surprise hit at the box-office.

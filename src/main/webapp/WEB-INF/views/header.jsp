@@ -39,7 +39,7 @@ box-shadow: 5px 5px 10px #202020
 
 
 
-<nav class="navbar navbar-default" data-spy="affix" data-offset-top="197">
+<nav class="navbar navbar-default navbar-custom" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -47,7 +47,7 @@ box-shadow: 5px 5px 10px #202020
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      
+      <a class="navbar-brand visible-xs"  style="color: #000000;"><b>PAZAR</b></a>
     </div>
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">

@@ -33,16 +33,16 @@ text-align:center;
 <div class="col-sm-4 col-sm-offset-4">
 <div class="jumbotron">
 
-<img src="images/TROLLY.png" class="logo"  class="img-responsive"><Span>Pazar World</Span></img>
+<img src="images/TROLLY.png" class="logo"  class="img-responsive"><Span>Pazar World</Span>
 <!-- <h3 >Pazar World</h3> -->
 <k:form action="loginpage" method="post" commandName="loginForm">
 
 
 
 <b>User name:</b>
-<k:input path="username" class="form-control" type="text"></k:input><br>
+<k:input path="username" required="true" class="form-control" type="text"></k:input><br>
 <b>Password:</b>
-<k:input path="password" class="form-control" type="password"></k:input><br>
+<k:input path="password" required="true" class="form-control" type="password"></k:input><br>
 <k:checkbox path="" value="Remember Me"  label="Remember Me"></k:checkbox>
 <br><br>
 <k:button path="submit" class="btn btn-success">Login</k:button>
