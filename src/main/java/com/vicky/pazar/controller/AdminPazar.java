@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdminPazar {
 
-@RequestMapping("/category")//this is displaying header and footer.
+@RequestMapping("/adminindex")//this is displaying header and footer.
 public String home()
 {
 	return "adminindex";//it indicates index.jsp.

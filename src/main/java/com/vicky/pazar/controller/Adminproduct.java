@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vicky.pazar.dao.ProDAO;
-
+import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Suppliermodel;
 
 @Controller
 @Transactional
@@ -23,12 +24,19 @@ public class Adminproduct {
 	public String pro(ModelMap m)
 	{
 		m.addAttribute("proForm",new Productmodel());
-		return "product";
+	    m.addAttribute("clickpro",1);
+	    String catid=pros.getcatList(new Categorymodel());
+	    m.addAttribute("getcatid",catid);
+	    String supid=pros.getsupList(new Suppliermodel());
+	    m.addAttribute("getsupid",supid);
+		return "adminindex";
 	}
 	@Transactional
 	@RequestMapping(method=RequestMethod.POST)
 	public String prods(@ModelAttribute("proForm")Productmodel pro){
 		pros.save(pro);
-		return "product";
-	}	
+		return "adminindex";
+	}
+
+
 }

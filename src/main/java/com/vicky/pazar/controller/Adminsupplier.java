@@ -22,7 +22,7 @@ public String sup(ModelMap m){
 	
 	m.addAttribute("supForm",new Suppliermodel());
 	m.addAttribute("clicksup",1);
-	return "supplier";
+	return "adminindex";
 }
 	@Transactional
 	@RequestMapping(method=RequestMethod.POST)
@@ -30,6 +30,6 @@ public String sup(ModelMap m){
 	{
 		
 		supes.save(supess);
-		return "supplier";
+		return "adminindex";
 	}
 }

@@ -36,9 +36,11 @@ box-shadow: 5px 5px 10px #202020
   </style>
 </head>
 <body>
-<img  class="brand" alt="GIF" src="images/insta.gif" >
+
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-<nav class="navbar navbar-default">
+<img  class="brand" alt="GIF" src="images/insta.gif" >
+
+	<nav class="navbar navbar-default navbar-custom" data-spy="affix" 	data-offset-top="197" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,10 +48,12 @@ box-shadow: 5px 5px 10px #202020
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand visible-xs" href="#" style="color: #000000;">Pazar</a>
+      
       <a class="navbar-brand" href="home">HOME</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         
         <li class="dropdown">
           <a   href="category">Category</a>
