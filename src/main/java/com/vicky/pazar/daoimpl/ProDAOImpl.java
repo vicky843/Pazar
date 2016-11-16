@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.Gson;
+
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.Productmodel;
@@ -36,29 +37,40 @@ private SessionFactory sessionFactory;
 	public boolean update(Productmodel product) {
 		// TODO Auto-generated method stub
 		return false;
-	}
+	}*/
 	@Transactional
 	public boolean delete(Productmodel product) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().delete(product);
 		return false;
-	}*/
+	}
 	@Transactional
 	public String getcatList(Categorymodel category) {
 	
 		@SuppressWarnings("unchecked")
-		List<Category> cat_list=(List<Category>)sessionFactory.getCurrentSession().createCriteria(Categorymodel.class).list();
+		List<Categorymodel> cat_list=(List<Categorymodel>)sessionFactory.getCurrentSession().createCriteria(Categorymodel.class).list();
 				Gson gson=new Gson();
 			String cat_json=gson.toJson(cat_list);
 		return cat_json;
 	}
-	@Override
+	@Transactional
 	public String getsupList(Suppliermodel supplier) {
 		@SuppressWarnings("unchecked")
-		List<Supplier> sup_list=(List<Supplier>)sessionFactory.getCurrentSession().createCriteria(Suppliermodel.class).list();
+		List<Suppliermodel> sup_list=(List<Suppliermodel>)sessionFactory.getCurrentSession().createCriteria(Suppliermodel.class).list();
 		Gson gson =new Gson();
 		String sup_json=gson.toJson(sup_list);
 		return sup_json;
 	}
+	@Transactional
+	public String getprolist(Productmodel product) {
+	
+		@SuppressWarnings("unchecked")
+		List<Productmodel> pro_list=(List<Productmodel>)sessionFactory.getCurrentSession().createCriteria(Productmodel.class).list();
+		Gson gson =new Gson();
+		String pro_json=gson.toJson(pro_list);//gson is stored in String json.
+	return pro_json;
+	}
+	
+	
 
 	}
 

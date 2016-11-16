@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.gson.Gson;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.model.Categorymodel;
 @Repository
@@ -62,10 +63,14 @@ public CatDAOImpl( SessionFactory sessionFactory){
 	}
 
 	@Transactional
-	public List<Categorymodel> list() {
-		String k="from Category";
-		Query query=(Query) sessionFactory.getCurrentSession().createQuery(k);
-		return ((CatDAO) query).list();
+	
+
+	public String getcatList(Categorymodel category) {
+		@SuppressWarnings("unchecked")
+		List<Categorymodel> cat_list=(List<Categorymodel>)sessionFactory.getCurrentSession().createCriteria(Categorymodel.class).list();
+		Gson gson=new Gson();
+		String cat_json=gson.toJson(cat_list);
+		return cat_json;
 	}
 
 }

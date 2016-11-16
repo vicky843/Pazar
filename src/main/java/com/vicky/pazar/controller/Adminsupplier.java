@@ -22,6 +22,8 @@ public String sup(ModelMap m){
 	
 	m.addAttribute("supForm",new Suppliermodel());
 	m.addAttribute("clicksup",1);
+	String supid=supes.getsupList(new Suppliermodel());
+	m.addAttribute("getsupid",supid);
 	return "adminindex";
 }
 	@Transactional

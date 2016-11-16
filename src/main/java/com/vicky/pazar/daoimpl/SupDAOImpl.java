@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.gson.Gson;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.dao.SupDAO;
 import com.vicky.pazar.model.Suppliermodel;
@@ -63,9 +64,11 @@ return(Suppliermodel)sessionFactory.getCurrentSession().get(Supplier.class, id);
 }
 
 @Transactional
-public List<Suppliermodel> list() {
-	String k="from Supplier";
-	Query query=(Query) sessionFactory.getCurrentSession().createQuery(k);
-	return ((SupDAO) query).list();
+public String getsupList(Suppliermodel supplier) {
+@SuppressWarnings("unchecked")
+List<Suppliermodel> sup_list=(List<Suppliermodel>)sessionFactory.getCurrentSession().createCriteria(Suppliermodel.class).list();
+Gson gson=new Gson();
+ String sup_json=gson.toJson(sup_list);
+	return sup_json;
 }
 }

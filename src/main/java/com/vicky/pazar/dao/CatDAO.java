@@ -8,7 +8,7 @@ public interface CatDAO {
 public boolean save(Categorymodel category);
 public boolean update(Categorymodel category);
 public boolean delete(Categorymodel category);
-
+public String getcatList(Categorymodel category);
 public Categorymodel get(String id);
-public List<Categorymodel> list();
+
 }

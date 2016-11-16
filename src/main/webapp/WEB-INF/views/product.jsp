@@ -9,11 +9,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script >
-var cat_list = ${getcatid};
-var sup_list= ${getsupid}; 
+var cat_list = ${getcatid};//this will get list from controller cat_list
+var sup_list=  ${getsupid}; 
+var pro_list= ${getproid};
 angular.module('productmodel',[]).controller('productcontrl',function($scope){
 $scope.category=cat_list;
 $scope.supplier=sup_list;
+$scope.product=pro_list;
 });
 </script>
 </head>
@@ -26,7 +28,7 @@ $scope.supplier=sup_list;
 <div class="col-sm-5 col-sm-offset-4">
 <div class="jumbotron">
 <h3> <b>Enter Product details</b></h3><br>
-<k:form action="" method="post" commandName="proForm">
+<k:form action="productpost" method="post" commandName="proForm">
 
 <k:input path="proid" required="true" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
 
@@ -39,7 +41,9 @@ $scope.supplier=sup_list;
 <k:select path="prossupid" required="true" class="form-control" >
 <k:option value="-1">Supplier id</k:option>
 <k:option ng-repeat="sup in supplier" value="{{sup.supid}}">{{sup.supname}}</k:option>
-</k:select>
+</k:select><br>
+<k:input path="prostock" required="true" class="form-control" placeholder="Enter Productstock" type="text" /><br>
+<k:input path="prodesc" required="true" class="form-control" placeholder="Enter Productdesc" type="text" /><br>
 
 <br>
 <k:button path="submit" class="btn btn-success" onclick="myFunction()">Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -50,6 +54,34 @@ $scope.supplier=sup_list;
 </k:form><!-- end of form -->
 </div>
 </div></div>
+<div>
+	<div>
+
+<table class="table table-bordered table-hover table-striped">
+ <tr><th>Product Id</th>
+<th>Product name</th>
+<th>Supplier Id</th>
+<th>Category Id</th>
+<th>Stock</th>
+<th>Desc</th>
+<th>Price</th>
+<th>Delete</th>
+<th>Edit</th>
+
+</tr> 
+<tr class="success" ng-repeat="pro in product">
+                <td>{{pro.proid}}</td> 
+                 <td>{{pro.proname}}</td>
+                <td>{{pro.proprice}}</td>
+                <td> {{pro.proscatid}}</td>
+                <td> {{pro.prossupid}}</td>
+                <td> {{pro.prodesc}}</td>
+                 <td> {{pro.prostock}}</td>
+           <td><a href="delete?proid={{pro.proid}}" class="btn btn-warning"><b>Delete</b></a></td>          
+</tr>
+</table>
+</div>
+	</div>
 </body>
 </html>
 

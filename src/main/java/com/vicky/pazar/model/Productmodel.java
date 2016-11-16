@@ -26,6 +26,24 @@ public String proscatid;
 	@Column
 	public String prossupid;
 	
+	@Column
+	public String prostock;
+	
+	@Column
+	public String prodesc;
+	
+public String getProstock() {
+		return prostock;
+	}
+	public void setProstock(String prostock) {
+		this.prostock = prostock;
+	}
+	public String getProdesc() {
+		return prodesc;
+	}
+	public void setProdesc(String prodesc) {
+		this.prodesc = prodesc;
+	}
 public String getProid() {
 	return proid;
 }

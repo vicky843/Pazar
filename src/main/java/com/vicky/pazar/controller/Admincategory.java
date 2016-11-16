@@ -21,6 +21,9 @@ CatDAO cats;
 public String adminget(ModelMap m){
 	m.addAttribute("catForm",new Categorymodel());
 	m.addAttribute("clickcat",1);
+	
+			 String catid=cats.getcatList(new Categorymodel());
+    m.addAttribute("getcatid",catid);
 	return "adminindex";
 	
 }
