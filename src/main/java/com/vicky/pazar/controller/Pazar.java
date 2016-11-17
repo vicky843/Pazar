@@ -26,7 +26,7 @@ m.addAttribute("contact", 1);
 return "index";
 }
 @RequestMapping("/home")
-public String homes(Model m)//it will navigate to carousel
+public String homes(Model m)//it will navigate to carousel(home).
 {
 	m.addAttribute("home", 1);
 return "index";

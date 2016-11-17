@@ -32,11 +32,5 @@ public class Loginform {
 		return "index";
 		
 	}
-	@RequestMapping("/register")
-	 public String viewRegistration(ModelMap m) {
-        
-     
-     m.addAttribute("clickregsss",1);  
-return "index";
-	}
+
 }

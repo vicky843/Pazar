@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.model.Categorymodel;
@@ -37,16 +38,30 @@ public class Adminproduct {
 	}
 	@Transactional
 	@RequestMapping(value="/productpost",method=RequestMethod.POST)
-	public String prods(@ModelAttribute("proForm")Productmodel pro){
+	public String prod(@ModelAttribute("proForm")Productmodel pro){
 		pros.save(pro);
 		return "adminindex";
 	}
 	@Transactional
 	@RequestMapping(value="/delete",method=RequestMethod.GET)
-public String delprods(@ModelAttribute("proForm")Productmodel pro){
-	pros.delete(pro);
+public String  delprods(@ModelAttribute("proForm")Productmodel pro,ModelMap m){
+		m.addAttribute("proForm",new Productmodel());
+	    m.addAttribute("clickpro",1);
+	    String catid=pros.getcatList(new Categorymodel());
+	    m.addAttribute("getcatid",catid);
+	    String supid=pros.getsupList(new Suppliermodel());
+	    m.addAttribute("getsupid",supid);
+	    String proid=pros.getprolist(new Productmodel());
+	    m.addAttribute("getproid",proid);
 	return "adminindex";
 
-}
-	
-}
+	}
+	@Transactional
+	@RequestMapping(value="/delete",method=RequestMethod.POST)
+	public String del(@RequestParam("proid") String pid)
+	{
+		pros.delete(pid);
+		return "adminindex";//this will return to adminindex.
+	}
+	}
+

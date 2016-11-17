@@ -8,8 +8,8 @@ import com.vicky.pazar.dao.RegDAO;
 import com.vicky.pazar.model.Registermodel;
 @Repository
 public class RegDAOImpl implements RegDAO {
-	private SessionFactory sessionFactory;
-	public RegDAOImpl(SessionFactory sessionFactory)
+	private SessionFactory sessionFactory;//instance variable
+	public RegDAOImpl(SessionFactory sessionFactory)//local variable
 	{
 	this.sessionFactory=sessionFactory;		
 	}

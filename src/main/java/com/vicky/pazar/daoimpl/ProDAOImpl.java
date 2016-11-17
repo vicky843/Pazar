@@ -38,11 +38,7 @@ private SessionFactory sessionFactory;
 		// TODO Auto-generated method stub
 		return false;
 	}*/
-	@Transactional
-	public boolean delete(Productmodel product) {
-		sessionFactory.getCurrentSession().delete(product);
-		return false;
-	}
+	
 	@Transactional
 	public String getcatList(Categorymodel category) {
 	
@@ -69,11 +65,13 @@ private SessionFactory sessionFactory;
 		String pro_json=gson.toJson(pro_list);//gson is stored in String json.
 	return pro_json;
 	}
-	
-	
-
+	@Transactional
+	public boolean delete(String pid) {
+		Productmodel p =(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class,pid);//modelclass reference name
+		sessionFactory.getCurrentSession().delete(p);
+		return true;
 	}
-
+}
 	
 
 

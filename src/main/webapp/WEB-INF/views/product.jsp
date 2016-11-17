@@ -77,7 +77,9 @@ $scope.product=pro_list;
                 <td> {{pro.prossupid}}</td>
                 <td> {{pro.prodesc}}</td>
                  <td> {{pro.prostock}}</td>
-           <td><a href="delete?proid={{pro.proid}}" class="btn btn-warning"><b>Delete</b></a></td>          
+           <td><a href="delete?proid={{pro.proid}}" class="btn btn-warning">
+           <b>Delete</b></a></td><!-- this will produce link in url to navigate with id&name -->
+
 </tr>
 </table>
 </div>

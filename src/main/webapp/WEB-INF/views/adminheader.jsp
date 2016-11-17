@@ -50,17 +50,17 @@ box-shadow: 5px 5px 10px #202020
       </button>
       <a class="navbar-brand visible-xs" href="#" style="color: #000000;">Pazar</a>
       
-      <a class="navbar-brand" href="home">HOME</a>
+      
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-left">
-        
+        <a class="navbar-brand" href="home">HOME</a>
         <li class="dropdown">
           <a   href="category">Category</a>
           
         </li>
         <li><a   href="supplier">Supplier</a></li>
-        <li><a  class="product" href="product">Products</a></li>
+        <li><a  href="product">Products</a></li>
       </ul>
       
     </div>
