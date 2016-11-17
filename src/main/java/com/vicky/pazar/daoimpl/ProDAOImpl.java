@@ -33,11 +33,7 @@ private SessionFactory sessionFactory;
 	}
 		
 	}
-      /* @Transactional
-	public boolean update(Productmodel product) {
-		// TODO Auto-generated method stub
-		return false;
-	}*/
+    
 	
 	@Transactional
 	public String getcatList(Categorymodel category) {
@@ -71,7 +67,11 @@ private SessionFactory sessionFactory;
 		sessionFactory.getCurrentSession().delete(p);
 		return true;
 	}
+@Transactional
+	public boolean update(String pid) {
+	Productmodel p=(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class, pid);
+	sessionFactory.getCurrentSession().update(p);
+	System.out.println("this is in impl");
+		return true;
+	}
 }
-	
-
-

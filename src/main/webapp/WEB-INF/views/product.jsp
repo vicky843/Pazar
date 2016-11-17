@@ -66,7 +66,7 @@ $scope.product=pro_list;
 <th>Desc</th>
 <th>Price</th>
 <th>Delete</th>
-<th>Edit</th>
+<th>Update</th>
 
 </tr> 
 <tr class="success" ng-repeat="pro in product">
@@ -79,7 +79,8 @@ $scope.product=pro_list;
                  <td> {{pro.prostock}}</td>
            <td><a href="delete?proid={{pro.proid}}" class="btn btn-warning">
            <b>Delete</b></a></td><!-- this will produce link in url to navigate with id&name -->
-
+         <td><a href="update?proid={{pro.proid}}" class="btn btn-success">
+           <b>Update</b></a></td>
 </tr>
 </table>
 </div>

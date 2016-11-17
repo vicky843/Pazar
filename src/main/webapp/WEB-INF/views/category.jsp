@@ -52,7 +52,7 @@ box-shadow: 5px 5px 10px #202020
 <div class="col-sm-5 col-sm-offset-4">
 <div class="jumbotron">
 <h3> <b>Enter Category details</b></h3><br>
-<k:form action="" method="post" commandName="catForm">
+<k:form action="categorypost" method="post" commandName="catForm">
 
 <k:input path="catid" required="true" class="form-control" placeholder="Enter Categoryid" type="text"></k:input><br>
 
@@ -75,9 +75,7 @@ box-shadow: 5px 5px 10px #202020
 <table class="table table-bordered table-hover table-striped">
  <tr><th>Category Id</th>
 <th>Category name</th>
-
 <th>Category desc</th>
-
 <th>Edit</th>
 <th>Delete</th>
 
@@ -86,8 +84,7 @@ box-shadow: 5px 5px 10px #202020
                 <td>{{cat.catid}}</td> 
                  <td>{{cat.catname}}</td>
                 <td>{{cat.catdesc}}</td>
-                
-                     
+            <td><a href="deleted?catid={{cat.catid}}" class="btn btn-warning">Delete</a>
 </tr>
 </table>
 </div>
