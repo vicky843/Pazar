@@ -26,7 +26,7 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 <div class="col-sm-5 col-sm-offset-4">
 <div class="jumbotron">
 <h3> <b>Enter Supplier details</b></h3><br>
-<k:form action="" method="post" commandName="supForm">
+<k:form action="supplierpost" method="post" commandName="supForm">
 
 <k:input path="supid" class="form-control" placeholder="supplierid" type="text"></k:input><br>
 
@@ -42,27 +42,28 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 </k:form><!-- end of form -->
 </div>
 </div></div></div>
-<div>
+
+	<div>
 	<div>
 
 <table class="table table-bordered table-hover table-striped">
  <tr><th>Supplier Id</th>
 <th>Supplier name</th>
-
 <th>Supplier address</th>
-<th>Supplier number</th>
 <th>Supplier email</th>
-<th>Edit</th>
-<th>Delete</th>
+<th>Supplier number</th>
 
+<th>Delete</th>
+<th>Update</th>
 </tr> 
 <tr class="success" ng-repeat="sup in supplier">
                 <td>{{sup.supid}}</td> 
                  <td>{{sup.supname}}</td>
                 <td>{{sup.supaddress}}</td>
-                <td>{{sup.supnumber}}</td>
-                <td>{{sup.supemail}}</td>
-                     
+            <td>{{sup.supemail}}</td>
+            <td>{{sup.supnumber}}</td>
+            
+            <td><a href="deleting?supid={{sup.supid}}" class="btn btn-warning">Delete</a>
 </tr>
 </table>
 </div>

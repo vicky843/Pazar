@@ -7,17 +7,18 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vicky.pazar.dao.SupDAO;
 import com.vicky.pazar.model.Suppliermodel;
 
 @Controller
-@Transactional
-@RequestMapping("/supplier")
+
+
 public class Adminsupplier {
 @Autowired
 SupDAO supes;
-@RequestMapping(method=RequestMethod.GET)
+@RequestMapping(value="/supplier",method=RequestMethod.GET)
 public String sup(ModelMap m){
 	
 	m.addAttribute("supForm",new Suppliermodel());
@@ -26,12 +27,26 @@ public String sup(ModelMap m){
 	m.addAttribute("getsupid",supid);
 	return "adminindex";
 }
-	@Transactional
-	@RequestMapping(method=RequestMethod.POST)
-	public String suppost(@ModelAttribute("supForm")Suppliermodel supess)
+	
+	@RequestMapping(value="/supplierpost",method=RequestMethod.POST)
+	public String suppost(@ModelAttribute("supForm")Suppliermodel supess,ModelMap m)
 	{
 		
 		supes.save(supess);
+		m.addAttribute("clicksup",1);
+		String supid=supes.getsupList(new Suppliermodel());
+	    m.addAttribute("getsupid",supid);
 		return "adminindex";
 	}
+	@RequestMapping(value="/deleting",method=RequestMethod.GET)
+	public String deletings (@RequestParam("supid")String sid,ModelMap m)
+	{
+		supes.delete(sid);
+		m.addAttribute("supForm",new Suppliermodel());
+		m.addAttribute("clicksup",1);
+	
+		  String supid=supes.getsupList(new Suppliermodel());
+		    m.addAttribute("getsupid",supid);
+		return "adminindex";
+	}	
 }

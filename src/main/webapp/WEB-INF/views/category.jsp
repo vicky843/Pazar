@@ -76,9 +76,9 @@ box-shadow: 5px 5px 10px #202020
  <tr><th>Category Id</th>
 <th>Category name</th>
 <th>Category desc</th>
-<th>Edit</th>
-<th>Delete</th>
 
+<th>Delete</th>
+<th>Update</th>
 </tr> 
 <tr class="success" ng-repeat="cat in category">
                 <td>{{cat.catid}}</td> 

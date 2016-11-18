@@ -47,9 +47,10 @@ public boolean update(Suppliermodel supplier) {
 	}
 }
 @Transactional
-public boolean delete(Suppliermodel supplier) {
+public boolean delete(String sid) {
 	try {
-		sessionFactory.getCurrentSession().delete(supplier);
+		Suppliermodel s=(Suppliermodel) sessionFactory.getCurrentSession().get(Suppliermodel.class, sid);
+		sessionFactory.getCurrentSession().delete(s);
 		return true;
 	} catch (Exception e) {
 		// TODO Auto-generated catch block

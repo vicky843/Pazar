@@ -13,7 +13,6 @@ import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.model.Categorymodel;
 
 @Controller
-@Transactional
 
 public class Admincategory {
 @Autowired
@@ -23,7 +22,7 @@ public String adminget(ModelMap m){
 	m.addAttribute("catForm",new Categorymodel());
 	m.addAttribute("clickcat",1);
 	
-	String catid=cats.getcatList(new Categorymodel());
+	String catid=cats.getcatList(new Categorymodel());//instation
     m.addAttribute("getcatid",catid);
 	return "adminindex";
 	
@@ -39,14 +38,14 @@ public String admin(@ModelAttribute("catForm")Categorymodel cat,ModelMap m){
 	
 }
 @RequestMapping(value="/deleted",method=RequestMethod.GET)
-public String delcat(@RequestParam("catid") String cid,ModelMap m)
+public String delts(@RequestParam("catid")String cid,ModelMap m)
 {
 	cats.delete(cid);
-	
+	m.addAttribute("catForm",new Categorymodel());
 m.addAttribute("clickcat",1);
 String catid=cats.getcatList(new Categorymodel());
 m.addAttribute("getcatid",catid);
-
 return "adminindex";
 }
+
 }
