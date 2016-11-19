@@ -85,6 +85,7 @@ box-shadow: 5px 5px 10px #202020
                  <td>{{cat.catname}}</td>
                 <td>{{cat.catdesc}}</td>
             <td><a href="deleted?catid={{cat.catid}}" class="btn btn-warning">Delete</a>
+            <td><a href="updating?catid={{cat.ctid}}" class="btn btn-success">Update</a></td>
 </tr>
 </table>
 </div>

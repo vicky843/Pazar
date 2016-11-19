@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="k" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="m" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +21,9 @@ $scope.product=pro_list;
 </script>
 </head>
 <body ng-app="productmodel" ng-controller="productcontrl">
-
+<m:if test="${Saveprocess==1 }">
 <div class="jumbotron text-center">
+
 <div class="container" >
   <h1>Welcome to Admin</h1></div></div>
 <div class="container">
@@ -54,6 +56,40 @@ $scope.product=pro_list;
 </k:form><!-- end of form -->
 </div>
 </div></div>
+</m:if>
+
+<m:if test="${Updateprocess==1 }">
+<div class="jumbotron text-center">
+<div class="container" >
+  <h1>Welcome to Admin</h1></div></div>
+<div class="container">
+<div class="col-sm-5 col-sm-offset-4">
+<div class="jumbotron">
+<h3> <b>Enter Product details</b></h3><br>
+<k:form action="productupdate" method="post" commandName="proForm">
+
+<k:input path="proid" required="true" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
+
+<k:input path="proname" required="true" class="form-control" placeholder="Enter Productname" type="text"></k:input><br>
+<k:input path="proprice" required="true" class="form-control" placeholder="Enter Productprice" type="text" /><br>
+<k:select path="proscatid" required="true" class="form-control"   ><br>
+<k:option value="-1" >Category id</k:option>
+<k:option ng-repeat="cat in category" value="{{cat.catid}}">{{cat.catname}}</k:option>
+</k:select><br>
+<k:select path="prossupid" required="true" class="form-control" >
+<k:option value="-1">Supplier id</k:option>
+<k:option ng-repeat="sup in supplier" value="{{sup.supid}}">{{sup.supname}}</k:option>
+</k:select><br>
+<k:input path="prostock" required="true" class="form-control" placeholder="Enter Productstock" type="text" /><br>
+<k:input path="prodesc" required="true" class="form-control" placeholder="Enter Productdesc" type="text" /><br>
+
+<br>
+<k:button path="submit" class="btn btn-success" onclick="myFunction()">Update</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<k:button  type="reset" value="reset"  class="btn btn-danger">Reset</k:button>
+</k:form>
+</div></div></div>
+</m:if>
 <div>
 	<div>
 

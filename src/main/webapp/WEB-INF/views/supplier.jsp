@@ -64,6 +64,7 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
             <td>{{sup.supnumber}}</td>
             
             <td><a href="deleting?supid={{sup.supid}}" class="btn btn-warning">Delete</a>
+            <td><a href="updated?supid={{sup.supid}}" class="btn btn-success">Update</a></td>
 </tr>
 </table>
 </div>

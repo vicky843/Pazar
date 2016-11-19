@@ -67,11 +67,10 @@ private SessionFactory sessionFactory;
 		sessionFactory.getCurrentSession().delete(p);
 		return true;
 	}
-@Transactional
-	public boolean update(String pid) {
-	Productmodel p=(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class, pid);
-	sessionFactory.getCurrentSession().update(p);
-	System.out.println("this is in impl");
+	@Transactional
+	public boolean update(Productmodel product) {
+		sessionFactory.getCurrentSession().update(product);
 		return true;
 	}
+
 }

@@ -69,11 +69,11 @@ public class Adminproduct {
 		System.out.println("this is done");
 		return "adminindex";//this will return to adminindex.
 	}
-	@RequestMapping(value="/update")
+	@RequestMapping(value="/update",method=RequestMethod.GET)
 	public String upda(@RequestParam("proid") String pid,ModelMap m)
 	{
-		System.out.println("this is controller");
-		pros.update(pid);
+ 		System.out.println("this is controller");
+		
 		System.out.println("this is controller");
 		m.addAttribute("proForm",new Productmodel());
 	    m.addAttribute("clickpro",1);
