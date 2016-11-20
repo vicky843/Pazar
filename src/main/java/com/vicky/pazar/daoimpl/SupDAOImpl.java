@@ -26,7 +26,7 @@ private SessionFactory sessionFactory;
 @Transactional
 public boolean save(Suppliermodel supplier) {
 try {
-	sessionFactory.getCurrentSession().save(supplier);
+	sessionFactory.getCurrentSession().save(supplier);//save purpose
 	return true;
 } catch (Exception e) {
 	// TODO Auto-generated catch block
@@ -36,18 +36,7 @@ try {
 }
 
 @Transactional
-public boolean update(Suppliermodel supplier) {
-	try {
-		sessionFactory.getCurrentSession().update(supplier);
-		return true;
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		return false;
-	}
-}
-@Transactional
-public boolean delete(String sid) {
+public boolean delete(String sid) {//delete purpose
 	try {
 		Suppliermodel s=(Suppliermodel) sessionFactory.getCurrentSession().get(Suppliermodel.class, sid);
 		sessionFactory.getCurrentSession().delete(s);
@@ -59,17 +48,35 @@ public boolean delete(String sid) {
 	}
 }
 
-@Transactional
-public Suppliermodel get(String id) {
-return(Suppliermodel)sessionFactory.getCurrentSession().get(Supplier.class, id);
-}
+
 
 @Transactional
-public String getsupList(Suppliermodel supplier) {
+public String getsupList(Suppliermodel supplier) {//to get whole list
 @SuppressWarnings("unchecked")
 List<Suppliermodel> sup_list=(List<Suppliermodel>)sessionFactory.getCurrentSession().createCriteria(Suppliermodel.class).list();
 Gson gson=new Gson();
  String sup_json=gson.toJson(sup_list);
 	return sup_json;
 }
+
+@Transactional
+public boolean update(Suppliermodel supplier) {
+	try {
+		sessionFactory.getCurrentSession().update(supplier);
+		return true;
+	} catch (HibernateException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return false;
+	}
+	
+}
+
+@Transactional
+public Suppliermodel getSupplier(String sid) {
+	return(Suppliermodel)sessionFactory.getCurrentSession().get(Supplier.class, sid);
+	
+}
+
+
 }

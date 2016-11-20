@@ -49,4 +49,28 @@ public String sup(ModelMap m){
 		    m.addAttribute("getsupid",supid);
 		return "adminindex";
 	}	
+	@RequestMapping(value="/updated",method=RequestMethod.GET)
+	public String update(@RequestParam("supid")String sid,ModelMap m)
+	{
+	    Suppliermodel supl=supes.getsup(sid);
+		m.addAttribute("clicksup",1);
+		m.addAttribute("updatesup",1);
+		 String supid=supes.getsupList(new Suppliermodel());
+		    m.addAttribute("getsupid",supid);
+	
+		return "adminindex";
+	}
+	
+	@RequestMapping(value="/supplierupdate",method=RequestMethod.POST)
+	public String updatsup(@ModelAttribute("supForm")Suppliermodel sid,ModelMap m)
+	{
+		
+	
+		m.addAttribute("savesup",1);
+		String supid=supes.getsupList(new Suppliermodel());
+	    m.addAttribute("getsupid",supid);
+	    m.addAttribute("clicksup",1);
+		return "adminindex";
+		
+	}
 }

@@ -21,7 +21,7 @@ $scope.product=pro_list;
 </script>
 </head>
 <body ng-app="productmodel" ng-controller="productcontrl">
-<m:if test="${Saveprocess==1 }">
+<m:if test="${Saveprocess== 1 }">
 <div class="jumbotron text-center">
 
 <div class="container" >
@@ -48,7 +48,7 @@ $scope.product=pro_list;
 <k:input path="prodesc" required="true" class="form-control" placeholder="Enter Productdesc" type="text" /><br>
 
 <br>
-<k:button path="submit" class="btn btn-success" onclick="myFunction()">Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<k:button path="submit" class="btn btn-success" >Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <k:button  type="reset" value="reset"  class="btn btn-danger">Reset</k:button>
 
@@ -66,7 +66,7 @@ $scope.product=pro_list;
 <div class="col-sm-5 col-sm-offset-4">
 <div class="jumbotron">
 <h3> <b>Enter Product details</b></h3><br>
-<k:form action="productupdate" method="post" commandName="proForm">
+<k:form action="updateproduct" method="post" commandName="proForm">
 
 <k:input path="proid" required="true" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
 
@@ -84,7 +84,7 @@ $scope.product=pro_list;
 <k:input path="prodesc" required="true" class="form-control" placeholder="Enter Productdesc" type="text" /><br>
 
 <br>
-<k:button path="submit" class="btn btn-success" onclick="myFunction()">Update</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<k:button path="submit" class="btn btn-success" >Update</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <k:button  type="reset" value="reset"  class="btn btn-danger">Reset</k:button>
 </k:form>

@@ -2,6 +2,7 @@ package com.vicky.pazar.daoimpl;
 
 import java.util.List;
 import java.util.Locale.Category;
+import java.util.function.Supplier;
 
 import javax.persistence.Query;
 
@@ -14,6 +15,7 @@ import com.google.gson.Gson;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Suppliermodel;
 
 @Repository
 public class CatDAOImpl implements CatDAO {
@@ -55,6 +57,25 @@ public class CatDAOImpl implements CatDAO {
 			return true;
 		
 
+	}
+
+@Transactional
+	public boolean update(Categorymodel category) {
+	try {
+		sessionFactory.getCurrentSession().update(category);
+			return true;
+	} catch (HibernateException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return false;
+	}
+	}
+
+	@Transactional
+	public Categorymodel getcat(String id) {
+		
+		Categorymodel cat=(Categorymodel) sessionFactory.getCurrentSession().get(Categorymodel.class, id);
+	return cat;
 	}
 
 }

@@ -27,7 +27,9 @@ public class Adminproduct {
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
 	{
+		m.addAttribute("Saveprocess",1);
 		m.addAttribute("proForm",new Productmodel());
+		System.out.println("this is product table");
 	    m.addAttribute("clickpro",1);
 	    String catid=pros.getcatList(new Categorymodel());
 	    m.addAttribute("getcatid",catid);
@@ -40,6 +42,7 @@ public class Adminproduct {
 	
 	@RequestMapping(value="/productpost",method=RequestMethod.POST)
 	public String prod(@ModelAttribute("proForm")Productmodel pro,ModelMap m){
+		m.addAttribute("Saveprocess",1);
 		pros.save(pro);
 		m.addAttribute("clickpro",1);
 		//m.addAttribute("clicksup",1); this is used to navigate to supplier
@@ -56,6 +59,7 @@ public class Adminproduct {
 	@RequestMapping(value="/delete",method=RequestMethod.GET)
 	public String del(@RequestParam("proid") String pid,ModelMap m)
 	{
+		m.addAttribute("Saveprocess",1);
 		pros.delete(pid);//pros is defined as productdao.
 		m.addAttribute("proForm",new Productmodel());
 	    m.addAttribute("clickpro",1);
@@ -70,21 +74,40 @@ public class Adminproduct {
 		return "adminindex";//this will return to adminindex.
 	}
 	@RequestMapping(value="/update",method=RequestMethod.GET)
-	public String upda(@RequestParam("proid") String pid,ModelMap m)
+	public String upda(@RequestParam("proid") String pid,ModelMap m)//from requestpara
 	{
- 		System.out.println("this is controller");
 		
-		System.out.println("this is controller");
-		m.addAttribute("proForm",new Productmodel());
-	    m.addAttribute("clickpro",1);
+		Productmodel po=pros.getpro(pid);//it wil store address with value.
+		//if we use new it will store only address but not values.
+		 m.addAttribute("clickpro",1);
+		m.addAttribute("Updateprocess",1);
+		 		System.out.println("this is getcontroller");
+ 			    String catid=pros.getcatList(new Categorymodel());
+		    String supid=pros.getsupList(new Suppliermodel());
+	  	    String proid=pros.getprolist(new Productmodel());
+	    m.addAttribute("getcatid",catid);
+	    m.addAttribute("getsupid",supid);
+	    m.addAttribute("getproid",proid);
+	    m.addAttribute("proForm",po);
+		return "adminindex";
+		
+	}
+	@RequestMapping(value="/updateproduct",method=RequestMethod.POST)
+	public String updaprod(@ModelAttribute("proForm")Productmodel pro,ModelMap m)
+	{
+		pros.update(pro);
+		
+		m.addAttribute("Saveprocess",1);
+		m.addAttribute("clickpro",1);
+		System.out.println("this is update");
 	    String catid=pros.getcatList(new Categorymodel());
 	    m.addAttribute("getcatid",catid);
 	    String supid=pros.getsupList(new Suppliermodel());
 	    m.addAttribute("getsupid",supid);
 	    String proid=pros.getprolist(new Productmodel());
 	    m.addAttribute("getproid",proid);
+	    m.addAttribute("proForm",new Productmodel());
 		return "adminindex";
-		
 	}
 	}
 

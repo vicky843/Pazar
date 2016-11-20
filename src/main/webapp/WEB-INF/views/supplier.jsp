@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="k" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="m" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 </head>
 
 <body ng-app='suppliermodel' ng-controller='suppliercontrl'>
-
+<m:if test="${savesup == 1 }">
 <div class="jumbotron">
 <div class="jumbotron text-center">
 <div class="container">
@@ -42,7 +43,32 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 </k:form><!-- end of form -->
 </div>
 </div></div></div>
+</m:if>
+<m:if test="${updatesup == 1 }">
+<div class="jumbotron">
+<div class="jumbotron text-center">
+<div class="container">
+  <h1>Welcome to Admin</h1></div></div>
+<div class="container">
+<div class="col-sm-5 col-sm-offset-4">
+<div class="jumbotron">
+<h3> <b>Enter Supplier details</b></h3><br>
+<k:form action="supplierupdate" method="post" commandName="supForm">
 
+<k:input path="supid" class="form-control" placeholder="supplierid" type="text"></k:input><br>
+
+<k:input path="supname" required="true" class="form-control" placeholder="suppliername" type="text"></k:input><br>
+<k:input path="supaddress"  required="true" class="form-control" placeholder="supplieraddress" type="text" ></k:input><br>
+<k:input path="supnumber" required="true" class="form-control" placeholder="suppliernumber" type="text" ></k:input><br>
+<k:input path="supemail" required="true" class="form-control" placeholder="supplieremail" type="text" ></k:input><br>
+<br><br>
+<k:button path="submit" class="btn btn-success">Update</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<k:button path="reset" class="btn btn-danger">Reset</k:button>
+
+
+</k:form></div></div></div></div>
+
+</m:if>
 	<div>
 	<div>
 

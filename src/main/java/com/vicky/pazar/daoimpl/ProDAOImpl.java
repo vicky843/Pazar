@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale.Category;
 import java.util.function.Supplier;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,11 +32,8 @@ private SessionFactory sessionFactory;
 		e.printStackTrace();
 		return false;
 	}
-		
-	}
-    
-	
-	@Transactional
+			}
+   	@Transactional
 	public String getcatList(Categorymodel category) {
 	
 		@SuppressWarnings("unchecked")
@@ -61,6 +59,8 @@ private SessionFactory sessionFactory;
 		String pro_json=gson.toJson(pro_list);//gson is stored in String json.
 	return pro_json;
 	}
+	
+	
 	@Transactional
 	public boolean delete(String pid) {
 		Productmodel p =(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class,pid);//modelclass reference name
@@ -69,8 +69,22 @@ private SessionFactory sessionFactory;
 	}
 	@Transactional
 	public boolean update(Productmodel product) {
-		sessionFactory.getCurrentSession().update(product);
-		return true;
+		try {
+			sessionFactory.getCurrentSession().update(product);
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+	@Transactional
+	public Productmodel getpro(String id) {
+		Productmodel prod=(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class, id);//bring data from productmodel
+
+	
+		return prod;
 	}
 
 }
