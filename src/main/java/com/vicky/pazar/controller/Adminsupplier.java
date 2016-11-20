@@ -20,7 +20,7 @@ public class Adminsupplier {
 SupDAO supes;
 @RequestMapping(value="/supplier",method=RequestMethod.GET)
 public String sup(ModelMap m){
-	
+	m.addAttribute("savesup",1);
 	m.addAttribute("supForm",new Suppliermodel());
 	m.addAttribute("clicksup",1);
 	String supid=supes.getsupList(new Suppliermodel());
@@ -31,7 +31,7 @@ public String sup(ModelMap m){
 	@RequestMapping(value="/supplierpost",method=RequestMethod.POST)
 	public String suppost(@ModelAttribute("supForm")Suppliermodel supess,ModelMap m)
 	{
-		
+		m.addAttribute("savesup",1);
 		supes.save(supess);
 		m.addAttribute("clicksup",1);
 		String supid=supes.getsupList(new Suppliermodel());
@@ -41,6 +41,7 @@ public String sup(ModelMap m){
 	@RequestMapping(value="/deleting",method=RequestMethod.GET)
 	public String deletings (@RequestParam("supid")String sid,ModelMap m)
 	{
+		m.addAttribute("savesup",1);
 		supes.delete(sid);
 		m.addAttribute("supForm",new Suppliermodel());
 		m.addAttribute("clicksup",1);
@@ -52,24 +53,26 @@ public String sup(ModelMap m){
 	@RequestMapping(value="/updated",method=RequestMethod.GET)
 	public String update(@RequestParam("supid")String sid,ModelMap m)
 	{
+		
 	    Suppliermodel supl=supes.getsup(sid);
 		m.addAttribute("clicksup",1);
 		m.addAttribute("updatesup",1);
 		 String supid=supes.getsupList(new Suppliermodel());
 		    m.addAttribute("getsupid",supid);
-	
+	m.addAttribute("supForm",supl);
 		return "adminindex";
 	}
 	
 	@RequestMapping(value="/supplierupdate",method=RequestMethod.POST)
 	public String updatsup(@ModelAttribute("supForm")Suppliermodel sid,ModelMap m)
 	{
-		
-	
+		supes.update(sid);
+
 		m.addAttribute("savesup",1);
+		 m.addAttribute("clicksup",1);
 		String supid=supes.getsupList(new Suppliermodel());
 	    m.addAttribute("getsupid",supid);
-	    m.addAttribute("clicksup",1);
+	   
 		return "adminindex";
 		
 	}

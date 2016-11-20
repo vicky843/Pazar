@@ -73,9 +73,10 @@ public boolean update(Suppliermodel supplier) {
 }
 
 @Transactional
-public Suppliermodel getSupplier(String sid) {
-	return(Suppliermodel)sessionFactory.getCurrentSession().get(Supplier.class, sid);
+public Suppliermodel getsup(String id) {
 	
+	Suppliermodel sup =(Suppliermodel) sessionFactory.getCurrentSession().get(Suppliermodel.class, id);
+	return sup;
 }
 
 
