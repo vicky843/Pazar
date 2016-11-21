@@ -90,8 +90,16 @@ $scope.product=pro_list;
 </k:form>
 </div></div></div>
 </m:if>
-<div>
-	<div>
+<div >
+	<div class="col-sm-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchpro">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+    <br>
+  </div>
 
 <table class="table table-bordered table-hover table-striped">
  <tr><th>Product Id</th>
@@ -105,7 +113,7 @@ $scope.product=pro_list;
 <th>Update</th>
 
 </tr> 
-<tr class="success" ng-repeat="pro in product">
+<tr class="success" ng-repeat="pro in product|filter:searchpro">
                 <td>{{pro.proid}}</td> 
                  <td>{{pro.proname}}</td>
                 <td>{{pro.proprice}}</td>

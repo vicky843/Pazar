@@ -69,9 +69,18 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 </k:form></div></div></div></div>
 
 </m:if>
-	<div>
-	<div>
+	<div >
+	<div class="col-sm-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchsupplier">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+    <br>
+  </div>
 
+<br>
 <table class="table table-bordered table-hover table-striped">
  <tr><th>Supplier Id</th>
 <th>Supplier name</th>
@@ -82,7 +91,7 @@ angular.module('suppliermodel',[]).controller('suppliercontrl',function ($scope)
 <th>Delete</th>
 <th>Update</th>
 </tr> 
-<tr class="success" ng-repeat="sup in supplier">
+<tr class="success" ng-repeat="sup in supplier|filter:searchsupplier">
                 <td>{{sup.supid}}</td> 
                  <td>{{sup.supname}}</td>
                 <td>{{sup.supaddress}}</td>

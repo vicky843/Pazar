@@ -97,8 +97,16 @@ box-shadow: 5px 5px 10px #202020
 </div>
 </div></div>
 </t:if>
-<div>
-	<div>
+<div >
+	<div class="col-sm-4">
+    <div class="input-group" >
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchcat">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+    <br>
+  </div>
 
 <table class="table table-bordered table-hover table-striped">
  <tr><th>Category Id</th>
@@ -108,7 +116,7 @@ box-shadow: 5px 5px 10px #202020
 <th>Delete</th>
 <th>Update</th>
 </tr> 
-<tr class="success" ng-repeat="cat in category">
+<tr class="success" ng-repeat="cat in category|filter:searchcat">
                 <td>{{cat.catid}}</td> 
                  <td>{{cat.catname}}</td>
                 <td>{{cat.catdesc}}</td>
