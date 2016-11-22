@@ -61,6 +61,7 @@ box-shadow: 5px 5px 10px #202020
         </li>
         <li><a   href="supplier">Supplier</a></li>
         <li><a  href="product">Products</a></li>
+         <li><a  href="registervalues">Registered users</a></li>
       </ul>
       
     </div>

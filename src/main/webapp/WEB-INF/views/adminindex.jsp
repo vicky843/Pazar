@@ -14,6 +14,9 @@
 <k:when test="${clickpro == 1 }">
 <jsp:include page="product.jsp"></jsp:include>
 </k:when>
+<k:when test="${clickregtrs == 1 }">
+<jsp:include page="registervalues.jsp"></jsp:include>
+</k:when>
 <k:otherwise>
 <jsp:include page="adminmid.jsp"></jsp:include>
 </k:otherwise>

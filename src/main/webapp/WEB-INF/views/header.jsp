@@ -55,6 +55,7 @@ box-shadow: 5px 5px 10px #202020
           <li><a  href="home">Home</a></li>
           <li><a href="aboutus" >About us</a></li>
           <li><a href="contactus">Contact us</a></li>
+          <li><a href="userproduct" >Products</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Catogeries <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#section41">veggies</a></li>
