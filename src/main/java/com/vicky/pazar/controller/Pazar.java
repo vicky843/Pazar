@@ -14,7 +14,7 @@ import com.vicky.pazar.model.Suppliermodel;
 
 @Controller
 public class Pazar {
-	@Autowired
+	@Autowired  //creates object automatically for proDAO.
 	ProDAO pros;
 @RequestMapping("/")//this is displaying header and footer.
 public String home()
@@ -42,7 +42,7 @@ public String homes(Model m)//it will navigate to carousel(home).
 return "index";
 }
 @RequestMapping(value="/userproduct",method=RequestMethod.GET)
-public String userp(ModelMap m)
+public String userp(ModelMap m)//it will get values from database & retrieve value to userend
 {
 	m.addAttribute("proForm",new Productmodel());
 m.addAttribute("userpro",1);
