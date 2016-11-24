@@ -6,6 +6,7 @@ import java.util.Locale.Category;
 import java.util.function.Supplier;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -86,5 +87,14 @@ private SessionFactory sessionFactory;
 	
 		return prod;
 	}
+/*	@Transactional
+	public List<String> getprodlist(String prodid) {
+		String hql="from product where proscatid='"+prodid+"'";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+	
+		List<String> prodisp =query.list();
+	
+		return prodisp;
+	}*/
 
 }
