@@ -1,12 +1,16 @@
 package com.vicky.pazar.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.Productmodel;
@@ -16,9 +20,16 @@ import com.vicky.pazar.model.Suppliermodel;
 public class Pazar {
 	@Autowired  //creates object automatically for proDAO.
 	ProDAO pros;
+	@Autowired
+	CatDAO cats;
+	
 @RequestMapping("/")//this is displaying header and footer.
-public String home()
+public String home( ModelMap m,HttpSession session)
 {
+	
+	String catlist=cats.getcatList();
+	session.setAttribute("catlist",catlist);
+	System.out.println("this is productdisplay"+catlist);
 	return "index";//it indicates index.jsp.
 	}
 
@@ -55,4 +66,19 @@ m.addAttribute("getproid",proid);
 return "index";
 }
 
+@RequestMapping(value="/displaycat",method=RequestMethod.GET)
+public String getcatlist(@RequestParam("catid") String catlist)
+{
+
+	 catlist=cats.getcatList();
+	
+	System.out.println("this is productdisplayss"+catlist);
+	return "index";//it indicates index.jsp.
+	}
+/*	 
+	String cat_list=cats.getcatList();
+	m.addAttribute("getcatList",cat_list);
+	System.out.println("this is productdisplaysss"+cat_list);
+	return "index";
+}*/
 }

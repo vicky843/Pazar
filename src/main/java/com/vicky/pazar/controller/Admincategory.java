@@ -23,7 +23,7 @@ public String adminget(ModelMap m){
 	m.addAttribute("catForm",new Categorymodel());
 	m.addAttribute("clickcat",1);
 	
-	String catid=cats.getcatList(new Categorymodel());//instation
+	String catid=cats.getcatList();//instation
     m.addAttribute("getcatid",catid);
 	return "adminindex";
 	
@@ -34,7 +34,7 @@ public String admin(@ModelAttribute("catForm")Categorymodel cat,ModelMap m){
 	m.addAttribute("beforeupdate",1);
 	cats.save(cat);
 	m.addAttribute("clickcat",1);//it will navigate to same page.
-	String catid=cats.getcatList(new Categorymodel());
+	String catid=cats.getcatList();
     m.addAttribute("getcatid",catid);
 	return "adminindex";
 	
@@ -46,7 +46,7 @@ public String delts(@RequestParam("catid")String cid,ModelMap m)
 	cats.delete(cid);
 	m.addAttribute("catForm",new Categorymodel());
 m.addAttribute("clickcat",1);
-String catid=cats.getcatList(new Categorymodel());
+String catid=cats.getcatList();
 m.addAttribute("getcatid",catid);
 return "adminindex";
 }
@@ -57,7 +57,7 @@ public String updat(@RequestParam("catid")String cid,ModelMap m)//@rp "catid "is
 m.addAttribute("clickcat", 1);
 	m.addAttribute("afterupdate", 1);
 
-	String catid=cats.getcatList(new Categorymodel());
+	String catid=cats.getcatList();
 	m.addAttribute("getcatid",catid);
 m.addAttribute("catForm",ca);
 	return "adminindex";	
@@ -69,7 +69,7 @@ public String aftrup(@ModelAttribute("catForm")Categorymodel cates,ModelMap m)
 	m.addAttribute("beforeupdate", 1);
 	m.addAttribute("clickcat", 1);
 	
-	String catid=cats.getcatList(new Categorymodel());
+	String catid=cats.getcatList();
 	m.addAttribute("getcatid",catid);
 	m.addAttribute("catForm",new Categorymodel());
 return "adminindex";	

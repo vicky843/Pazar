@@ -40,7 +40,7 @@ public class CatDAOImpl implements CatDAO {
 	}
 
 	@Transactional
-	public String getcatList(Categorymodel category) {
+	public String getcatList() {
 		@SuppressWarnings("unchecked")
 		List<Categorymodel> cat_list = (List<Categorymodel>) sessionFactory.getCurrentSession()
 				.createCriteria(Categorymodel.class).list();

@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script>
+ 
+  var catlist=<%=session.getAttribute("catlist")%>;
+  alert(catlist);
+  angular.module('categmodel',[]).controller('catecontrol',function($scope){
+	  $scope.category=catlist;
+  });
+  </script>
   <style>
   
   .body {
@@ -35,7 +44,7 @@ box-shadow: 5px 5px 10px #202020
   </style>
 </head>
 <img  class="brand" alt="GIF" src="images/insta.gif" >
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body ng-app='categmodel' ng-controller='catecontrol' data-spy="scroll" data-target=".navbar" data-offset="50">
 
 
 
@@ -56,13 +65,8 @@ box-shadow: 5px 5px 10px #202020
           <li><a href="aboutus" >About us</a></li>
           <li><a href="contactus">Contact us</a></li>
           <li><a href="userproduct" >Products</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Catogeries <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#section41">veggies</a></li>
-              <li><a href="#section42">general</a></li>
-            </ul>
-          </li>
-        </ul>
+         <li ng-repeat="cat in category"  value="{{cat.catid}}"><a href="displaycat?catid={{cat.catid}}">{{cat.catname}}</a> </li>
+         </ul>
         <form  class="navbar-form pull-left">
         <input type="text" class="form-control" placeholder="Search Here..">
         <button type="submit" class="btn btn-default">
