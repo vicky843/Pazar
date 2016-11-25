@@ -1,5 +1,7 @@
 package com.vicky.pazar.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,23 +58,35 @@ return "index";
 public String userp(ModelMap m)//it will get values from database & retrieve value to userend
 {
 	m.addAttribute("proForm",new Productmodel());
-m.addAttribute("userpro",1);
-String catid=pros.getcatList(new Categorymodel());
-m.addAttribute("getcatid",catid);
-String supid=pros.getsupList(new Suppliermodel());
-m.addAttribute("getsupid",supid);
-String proid=pros.getprolist(new Productmodel());
-m.addAttribute("getproid",proid);
+	System.out.println("this is userproduct table");
+    m.addAttribute("clickuserpro",1);
+    String catid=pros.getcatList(new Categorymodel());
+    m.addAttribute("getcatid",catid);
+    String supid=pros.getsupList(new Suppliermodel());
+    m.addAttribute("getsupid",supid);
+    String proid=pros.getprolist(new Productmodel());
+    m.addAttribute("getproid",proid);
+
+	
 return "index";
 }
-
-@RequestMapping(value="/displaycat",method=RequestMethod.GET)
-public String getcatlist(@RequestParam("catid") String catlist)
+/* this is extra controller
+@RequestMapping(value="/userproduct",method=RequestMethod.GET)
+public String staticuserpro(@RequestParam("proid") String prods,ModelMap m)
 {
-
-	 catlist=cats.getcatList();
 	
-	System.out.println("this is productdisplayss"+catlist);
+	
+return "index";	
+}*/
+@RequestMapping(value="/displaycat",method=RequestMethod.GET)
+public String getcatlist(@RequestParam("proid") String prods,ModelMap m)
+{
+m.addAttribute("userprods",1);
+List<Productmodel> prod=pros.getprodlist(prods);
+
+System.out.println(prod);
+m.addAttribute("getprodlist",prod);//this is used to get list from prodaoimp.
+
 	return "index";//it indicates index.jsp.
 	}
 /*	 

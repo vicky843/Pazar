@@ -11,8 +11,9 @@
   <script>
  
   var catlist=<%=session.getAttribute("catlist")%>;
-  alert(catlist);
-  angular.module('categmodel',[]).controller('catecontrol',function($scope){
+  /* alert(catlist); */
+  /* it will create alert message while executing
+ */  angular.module('categmodel',[]).controller('catecontrol',function($scope){
 	  $scope.category=catlist;
   });
   </script>
@@ -61,12 +62,17 @@ box-shadow: 5px 5px 10px #202020
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
+      <!--  <li> <a class="list-group-item" href="home"><i class="fa fa-home " aria-hidden="true"></i>&nbsp; Home</a></li> -->
           <li><a  href="home">Home</a></li>
           <li><a href="aboutus" >About us</a></li>
           <li><a href="contactus">Contact us</a></li>
           <li><a href="userproduct" >Products</a></li>
-         <li ng-repeat="cat in category"  value="{{cat.catid}}"><a href="displaycat?catid={{cat.catid}}">{{cat.catname}}</a> </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             
+         <li ng-repeat="cat in category"  value="{{cat.catid}}"><a href="displaycat?proid={{cat.catid}}">{{cat.catname}}</a> </li>
          </ul>
+         </li></ul>
         <form  class="navbar-form pull-left">
         <input type="text" class="form-control" placeholder="Search Here..">
         <button type="submit" class="btn btn-default">

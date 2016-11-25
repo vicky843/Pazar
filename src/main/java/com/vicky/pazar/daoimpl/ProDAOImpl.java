@@ -87,14 +87,17 @@ private SessionFactory sessionFactory;
 	
 		return prod;
 	}
-/*	@Transactional
-	public List<String> getprodlist(String prodid) {
+	@Transactional
+	public List<Productmodel> getprodlist(String prodid) {
 		String hql="from product where proscatid='"+prodid+"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 	
-		List<String> prodisp =query.list();
-	
+		List<Productmodel> prodisp =query.list();
+		System.out.println(hql+""+prodisp);
+		System.out.println("this is prodaoimp"+hql);
 		return prodisp;
-	}*/
+	}
+	
+
 
 }

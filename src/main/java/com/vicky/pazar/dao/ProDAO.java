@@ -26,5 +26,5 @@ public String getprolist(Productmodel product);
 
 public Productmodel getpro(String id);
 
-/*public List<String> getprodlist(String prodid);*/
+public List<Productmodel> getprodlist(String prodid);//this is used to get products by category
 }
