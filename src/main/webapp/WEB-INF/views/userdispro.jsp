@@ -9,8 +9,6 @@
 <div class="container-fluid">
 <k:forEach items="${getprodlist }" var="pro">
 <div class="col-sm-2">
-
- 
 this is userproduct
 </div>
 </div>

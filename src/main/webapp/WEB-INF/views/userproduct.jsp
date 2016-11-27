@@ -10,13 +10,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script >
-var cat_list = ${getcatid};//this will get list from controller cat_list
-var sup_list=  ${getsupid}; 
-var pro_list= ${getproid};
-angular.module('productmodel',[]).controller('productcontrl',function($scope){
-$scope.category=cat_list;
-$scope.supplier=sup_list;
-$scope.product=pro_list;
+
+var cat_list=${getcatid};
+var sup_list=${getsupid};
+var pro_list=${getproid};
+angular.module('productmodel',[]).controller('productcontrl',function ($scope)
+		{
+	$scope.category=cat_list;
+	$scope.supplier=sup_list;
+	$scope.product=pro_list;
 });
 </script>
 </head>
@@ -56,6 +58,5 @@ $scope.product=pro_list;
 </tr>
 </table>
 </div>
-	
 </body>
 </html>

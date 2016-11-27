@@ -67,7 +67,7 @@ box-shadow: 5px 5px 10px #202020
           <li><a href="aboutus" >About us</a></li>
           <li><a href="contactus">Contact us</a></li>
           <li><a href="userproduct" >Products</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category <span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="displaycat">Shop By Category <span class="caret"></span></a>
             <ul class="dropdown-menu">
              
          <li ng-repeat="cat in category"  value="{{cat.catid}}"><a href="displaycat?proid={{cat.catid}}">{{cat.catname}}</a> </li>

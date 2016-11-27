@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.google.gson.Gson;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.model.Categorymodel;
-import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Suppliermodel;
 
 @Repository

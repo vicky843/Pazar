@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vicky.pazar.dao.RegDAO;
-import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Registermodel;
 
 @Controller

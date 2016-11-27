@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.model.Categorymodel;
-import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Suppliermodel;
 
 @Controller
@@ -57,14 +57,14 @@ return "index";
 @RequestMapping(value="/userproduct",method=RequestMethod.GET)
 public String userp(ModelMap m)//it will get values from database & retrieve value to userend
 {
-	m.addAttribute("proForm",new Productmodel());
+	m.addAttribute("proForm",new Product());
 	System.out.println("this is userproduct table");
     m.addAttribute("clickuserpro",1);
     String catid=pros.getcatList(new Categorymodel());
     m.addAttribute("getcatid",catid);
     String supid=pros.getsupList(new Suppliermodel());
     m.addAttribute("getsupid",supid);
-    String proid=pros.getprolist(new Productmodel());
+    String proid=pros.getprolist(new Product());
     m.addAttribute("getproid",proid);
 
 	
@@ -82,17 +82,12 @@ return "index";
 public String getcatlist(@RequestParam("proid") String prods,ModelMap m)
 {
 m.addAttribute("userprods",1);
-List<Productmodel> prod=pros.getprodlist(prods);
+List<Product> prod=pros.getprodlist(prods);
 
 System.out.println(prod);
 m.addAttribute("getprodlist",prod);//this is used to get list from prodaoimp.
 
 	return "index";//it indicates index.jsp.
 	}
-/*	 
-	String cat_list=cats.getcatList();
-	m.addAttribute("getcatList",cat_list);
-	System.out.println("this is productdisplaysss"+cat_list);
-	return "index";
-}*/
+
 }

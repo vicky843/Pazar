@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="product")
 @Component
-public class Productmodel {
+public class Product {
 	@Id
 public String proid;
 	

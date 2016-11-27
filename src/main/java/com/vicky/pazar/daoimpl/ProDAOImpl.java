@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.model.Categorymodel;
-import com.vicky.pazar.model.Productmodel;
+import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Suppliermodel;
 @Repository
 public class ProDAOImpl implements ProDAO{
@@ -24,7 +24,7 @@ private SessionFactory sessionFactory;
 	this.sessionFactory=sessionFactory;
 }
 	@Transactional
-	public boolean save(Productmodel product) {
+	public boolean save(Product product) {
       try {
 		sessionFactory.getCurrentSession().save(product);
 		return true;
@@ -52,10 +52,10 @@ private SessionFactory sessionFactory;
 		return sup_json;
 	}
 	@Transactional
-	public String getprolist(Productmodel product) {
+	public String getprolist(Product product) {
 	
 		@SuppressWarnings("unchecked")
-		List<Productmodel> pro_list=(List<Productmodel>)sessionFactory.getCurrentSession().createCriteria(Productmodel.class).list();
+		List<Product> pro_list=(List<Product>)sessionFactory.getCurrentSession().createCriteria(Product.class).list();
 		Gson gson =new Gson();
 		String pro_json=gson.toJson(pro_list);//gson is stored in String json.
 	return pro_json;
@@ -64,12 +64,12 @@ private SessionFactory sessionFactory;
 	
 	@Transactional
 	public boolean delete(String pid) {
-		Productmodel p =(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class,pid);//modelclass reference name
+		Product p =(Product) sessionFactory.getCurrentSession().get(Product.class,pid);//modelclass reference name
 		sessionFactory.getCurrentSession().delete(p);
 		return true;
 	}
 	@Transactional
-	public boolean update(Productmodel product) {
+	public boolean update(Product product) {
 		try {
 			sessionFactory.getCurrentSession().update(product);
 			return true;
@@ -81,18 +81,18 @@ private SessionFactory sessionFactory;
 		
 	}
 	@Transactional
-	public Productmodel getpro(String id) {
-		Productmodel prod=(Productmodel) sessionFactory.getCurrentSession().get(Productmodel.class, id);//bring data from productmodel
+	public Product getpro(String id) {
+		Product prod=(Product) sessionFactory.getCurrentSession().get(Product.class, id);//bring data from productmodel
 
 	
 		return prod;
 	}
 	@Transactional
-	public List<Productmodel> getprodlist(String prodid) {
-		String hql="from product where proscatid='"+prodid+"'";
+	public List<Product> getprodlist(String prodid) {
+		String hql="from Product where proscatid='"+prodid+"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 	
-		List<Productmodel> prodisp =query.list();
+		List<Product> prodisp =query.list();
 		System.out.println(hql+""+prodisp);
 		System.out.println("this is prodaoimp"+hql);
 		return prodisp;
