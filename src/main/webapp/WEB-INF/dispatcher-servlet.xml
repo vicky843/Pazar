@@ -19,6 +19,12 @@
     <value>.jsp</value>
  </property>
  </bean>
+ <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+
+<property value="100000" name="maxUploadSize"/>
+
+</bean>
+ 
  <mvc:resources location="/WEB-INF/resources/images/" mapping="/images/**"></mvc:resources>
  
  <mvc:annotation-driven/>

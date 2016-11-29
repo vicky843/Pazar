@@ -5,9 +5,7 @@
 <head>
   <title>Bootstrap Case</title>
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script >
 var cat_list = ${getcatid};//this will get list from controller cat_list
@@ -30,7 +28,7 @@ $scope.product=pro_list;
 <div class="col-sm-5 col-sm-offset-4">
 <div class="jumbotron">
 <h3> <b>Enter Product details</b></h3><br>
-<k:form action="productpost" method="post" commandName="proForm">
+<k:form action="productpost" method="post" commandName="proForm" enctype="multipart/form-data">
 
 <k:input path="proid" required="true" class="form-control" placeholder="Enter Productid" type="text"></k:input><br>
 
@@ -46,7 +44,7 @@ $scope.product=pro_list;
 </k:select><br>
 <k:input path="prostock" required="true" class="form-control" placeholder="Enter Productstock" type="text" /><br>
 <k:input path="prodesc" required="true" class="form-control" placeholder="Enter Productdesc" type="text" /><br>
-
+<k:input path="image" type="file" />
 <br>
 <k:button path="submit" class="btn btn-success" >Save</k:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

@@ -2,6 +2,10 @@ package com.vicky.pazar.controller;
 
 
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.dao.ProDAO;
@@ -23,6 +28,8 @@ public class Adminproduct {
 	
 	@Autowired
 	ProDAO pros;
+	
+	 String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
@@ -53,6 +60,34 @@ public class Adminproduct {
 		    m.addAttribute("getsupid",supid);
 		    String proid=pros.getprolist(new Product());
 		    m.addAttribute("getproid",proid);
+		 
+		    path=path+String.valueOf(pro.getProid())+".jpg";
+		    File f=new File(path);
+			
+			MultipartFile img=pro.getImage();
+		    if(!img.isEmpty())
+			{
+				
+				try
+				{
+				  byte[] bytes=img.getBytes();
+				  System.out.println(bytes.length);
+				  FileOutputStream fos=new FileOutputStream(f);
+	              			BufferedOutputStream bs=new BufferedOutputStream(fos);
+	              			bs.write(bytes);
+	              			bs.close();
+	             			 System.out.println("File Uploaded Successfully");
+				}
+				catch(Exception e)
+				{
+					System.out.println("Exception Arised"+e);
+				}
+			}
+			else
+			{
+				System.out.println("File is Empty not Uploaded");
+				
+			}
 		return "adminindex";
 	}
 
