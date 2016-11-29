@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.vicky.pazar.dao.CatDAO;
 import com.vicky.pazar.dao.ProDAO;
 import com.vicky.pazar.dao.SupDAO;
+import com.vicky.pazar.fileutil.Fileupload;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Suppliermodel;
@@ -28,8 +29,8 @@ public class Adminproduct {
 	
 	@Autowired
 	ProDAO pros;
-	
-	
+
+	 
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
@@ -49,7 +50,12 @@ public class Adminproduct {
 	
 	@RequestMapping(value="/productpost",method=RequestMethod.POST)
 	public String prod(@ModelAttribute("proForm")Product pro,ModelMap m){
-		m.addAttribute("Saveprocess",1);
+		String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+		
+	    MultipartFile img = pro.getImage();
+		
+	    System.out.println("this is img"+img);
+	    m.addAttribute("Saveprocess",1);
 		pros.save(pro);
 		m.addAttribute("clickpro",1);
 		//m.addAttribute("clicksup",1); this is used to navigate to supplier
@@ -60,7 +66,10 @@ public class Adminproduct {
 		    m.addAttribute("getsupid",supid);
 		    String proid=pros.getprolist(new Product());
 		    m.addAttribute("getproid",proid);
-		    String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+		    
+		   Fileupload.upload(path,img, pro.getProid()+".jpg");
+		    //this is used when method is not declared outside.
+		    /*String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 		    path=path+String.valueOf(pro.getProid())+".jpg";
 		    File f=new File(path);
 			
@@ -87,7 +96,7 @@ public class Adminproduct {
 			{
 				System.out.println("File is Empty not Uploaded");
 				
-			}
+			}*/
 		return "adminindex";
 	}
 

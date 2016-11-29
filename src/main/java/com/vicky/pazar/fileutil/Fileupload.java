@@ -1,0 +1,46 @@
+package com.vicky.pazar.fileutil;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class Fileupload {
+
+	public static void upload(String path,MultipartFile file,String Filename)
+	{
+		
+		if(!file.isEmpty())
+		{
+			
+			
+			try{
+				byte[] bytes=file.getBytes();
+				//create directory to store file
+				File dir=new File(path);
+				if(!dir.exists())
+				{
+					dir.mkdirs();
+                    //create file onserver
+					File  serverfile=new File(dir.getAbsolutePath()+File.separator+Filename);//separator will help us to work on any OS.
+					
+					BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream(serverfile));
+					bos.write(bytes);
+					System.out.println("File Uploaded Successfully");
+					bos.close();
+					
+					
+				}}
+				catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("File is Empty not Uploaded");
+					e.printStackTrace();
+				}
+			
+			
+			}
+		
+		
+	}
+}

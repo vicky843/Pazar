@@ -21,10 +21,6 @@
   </div>
 </k:forEach>
 
-
-  
 </div>
-
-
 </body>
 </html>

@@ -11,7 +11,7 @@ public boolean update(Categorymodel category);
 
 public boolean delete(String cid);
 
-public String getcatList();
+public String getcatList( );
 
 public Categorymodel getcat(String id);
 
