@@ -29,7 +29,7 @@ public class Adminproduct {
 	@Autowired
 	ProDAO pros;
 	
-	 String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+	
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
@@ -60,7 +60,7 @@ public class Adminproduct {
 		    m.addAttribute("getsupid",supid);
 		    String proid=pros.getprolist(new Product());
 		    m.addAttribute("getproid",proid);
-		 
+		    String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 		    path=path+String.valueOf(pro.getProid())+".jpg";
 		    File f=new File(path);
 			
