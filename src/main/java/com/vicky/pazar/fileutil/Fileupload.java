@@ -17,8 +17,11 @@ public class Fileupload {
 			
 			try{
 				byte[] bytes=file.getBytes();
+				System.out.println(bytes.length);
+				System.out.println(bytes);
 				//create directory to store file
 				File dir=new File(path);
+				System.out.println(dir);
 				if(!dir.exists())
 				{
 					dir.mkdirs();
@@ -26,9 +29,11 @@ public class Fileupload {
 					File  serverfile=new File(dir.getAbsolutePath()+File.separator+Filename);//separator will help us to work on any OS.
 					
 					BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream(serverfile));
+					System.out.println(bos);
 					bos.write(bytes);
 					System.out.println("File Uploaded Successfully");
 					bos.close();
+					
 					
 					
 				}}

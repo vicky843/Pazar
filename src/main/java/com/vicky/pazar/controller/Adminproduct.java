@@ -1,11 +1,5 @@
 package com.vicky.pazar.controller;
 
-
-
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -30,7 +24,7 @@ public class Adminproduct {
 	@Autowired
 	ProDAO pros;
 
-	 
+	String  path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
@@ -50,11 +44,11 @@ public class Adminproduct {
 	
 	@RequestMapping(value="/productpost",method=RequestMethod.POST)
 	public String prod(@ModelAttribute("proForm")Product pro,ModelMap m){
-		String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 		
-	    MultipartFile img = pro.getImage();
 		
-	    System.out.println("this is img"+img);
+	    MultipartFile file = pro.getImage();
+		
+	    System.out.println("this is img"+file);
 	    m.addAttribute("Saveprocess",1);
 		pros.save(pro);
 		m.addAttribute("clickpro",1);
@@ -67,7 +61,8 @@ public class Adminproduct {
 		    String proid=pros.getprolist(new Product());
 		    m.addAttribute("getproid",proid);
 		    
-		   Fileupload.upload(path,img, pro.getProid()+".jpg");
+		   Fileupload.upload(path, file , pro.getProid()+".jpg");
+		
 		    //this is used when method is not declared outside.
 		    /*String path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 		    path=path+String.valueOf(pro.getProid())+".jpg";
