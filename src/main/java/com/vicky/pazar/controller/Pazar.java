@@ -1,6 +1,7 @@
 package com.vicky.pazar.controller;
 
 import java.util.List;
+import java.util.Locale.Category;
 
 import javax.servlet.http.HttpSession;
 
@@ -29,7 +30,7 @@ public class Pazar {
 public String home( ModelMap m,HttpSession session)
 {
 	
-	String catlist=cats.getcatList();
+	String catlist=cats.getcatList(new Categorymodel());
 	session.setAttribute("catlist",catlist);
 	System.out.println("this is productdisplay"+catlist);
 	return "index";//it indicates index.jsp.

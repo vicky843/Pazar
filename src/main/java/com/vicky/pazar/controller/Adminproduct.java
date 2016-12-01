@@ -24,7 +24,7 @@ public class Adminproduct {
 	@Autowired
 	ProDAO pros;
 
-	String  path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+	String  path="E:\\Pazar\\PazarFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images";
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String pro(ModelMap m)
