@@ -55,6 +55,11 @@ overflow:hidden;
   right: 0;
 }
 </style>
+<script>
+function myFunction() {
+    document.getElementById("myNumber").stepUp(1);
+}
+</script>
 </head>
 <body>
 <div class="container-fluid">
@@ -64,10 +69,11 @@ overflow:hidden;
  <a href="displaycat?proid=${cat.catid}"></a>
   <b>${pro.proname}</b><br>
    <a href="gotocart?proid=${pro.proid }">
-  <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }">
- <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}</b></div>
+  <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }"></a> 
+ <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
+ Quantity: <input type="number" id="myNumber"><br>
   <div class="button"  style="vertical-align:middle" ><span>BUY </span> </div>
-    <div style="margin-top:5px;"><a class="btn btn-success "> ADD TO CART</a></div></a> 
+    <div style="margin-top:5px;"><a class="btn btn-success "> ADD TO CART</a></div>
   
   </div>
   </div>

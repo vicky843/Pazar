@@ -15,6 +15,7 @@
 <jsp:include page="product.jsp"></jsp:include>
 </k:when>
 <k:when test="${clickregtrs == 1 }">
+
 <jsp:include page="registervalues.jsp"></jsp:include>
 </k:when>
 <k:otherwise>

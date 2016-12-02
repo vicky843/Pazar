@@ -39,7 +39,9 @@ public class Adminproduct {
 	    m.addAttribute("getsupid",supid);
 	    String proid=pros.getprolist(new Product());
 	    m.addAttribute("getproid",proid);
-		return "adminindex";
+	   /* if(proid==null){
+	    m.addAttribute("searchit","no result found");
+	    }*/return "adminindex";
 	}
 	
 	@RequestMapping(value="/productpost",method=RequestMethod.POST)
