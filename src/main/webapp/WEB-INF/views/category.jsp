@@ -5,7 +5,7 @@
 <head>
   <title>Bootstrap Case</title>
   <meta charset="utf-8">
- 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script>
 var cat_list = ${getcatid};
 angular.module('categorymodel',[]).controller('categorycontrl',function($scope){

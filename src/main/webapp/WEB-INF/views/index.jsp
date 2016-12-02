@@ -31,7 +31,9 @@
 <k:when test="${contact==1 }">
 <jsp:include page="contactus.jsp"></jsp:include>
 </k:when>
-
+<k:when test="${cart== 1 }">
+<jsp:include page="carts.jsp"></jsp:include>
+</k:when>
 <k:otherwise>
 <jsp:include page="carousel.jsp"></jsp:include></k:otherwise>
 </k:choose>

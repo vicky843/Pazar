@@ -74,7 +74,7 @@ box-shadow: 5px 5px 10px #202020
          <li ng-repeat="cat in category"  value="{{cat.catid}}"><a href="displaycat?proid={{cat.catid}}">{{cat.catname}}</a> </li>
          </ul>
          </li></ul>
-        <form  class="navbar-form pull-left">
+        <form  class="navbar-form pull-left" >
         <input type="text" class="form-control" placeholder="Search Here..">
         <button type="submit" class="btn btn-default">
         <span class="glyphicon glyphicon-search "></span>

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="k" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +11,9 @@
       margin: auto;
   }
   </style>
+
 </head>
-<body>
+<body >
 
 <div class="container-fluid">
   <br>
@@ -72,6 +74,10 @@
     </a>
   </div>
 </div>
+<br><br><br><br><br>
+<h1>this is product list</h1>
+
+
 
 </body>
 </html>

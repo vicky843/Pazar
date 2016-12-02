@@ -90,5 +90,13 @@ m.addAttribute("getprodlist",prod);//this is used to get list from prodaoimp.
 
 	return "index";//it indicates index.jsp.
 	}
-
+@RequestMapping(value="/gotocart",method=RequestMethod.GET)
+public String cart(ModelMap m,@RequestParam("proid")String prosid)
+{
+	m.addAttribute("cart",1);
+	
+	Product cart=pros.getpro(prosid);
+	m.addAttribute("getpro",cart);
+return "index";	
+}
 }
