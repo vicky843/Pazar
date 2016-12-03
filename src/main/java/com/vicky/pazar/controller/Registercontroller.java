@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vicky.pazar.dao.RegDAO;
-import com.vicky.pazar.model.Registermodel;
+import com.vicky.pazar.model.Register;
 
 
 
@@ -21,13 +21,13 @@ import com.vicky.pazar.model.Registermodel;
 @Transactional
 @RequestMapping(value="/register")
 
-public class Register {
+public class Registercontroller {
 	@Autowired
 	RegDAO rgs;
 		@RequestMapping(method=RequestMethod.GET)
 		 public String viewRegistration(ModelMap m) {
 	         
-	      m.addAttribute("regForm",new Registermodel());
+	      m.addAttribute("regForm",new Register());
 	      m.addAttribute("clickregsss",1);  
 			  List<String> gendertype = new ArrayList<>();
 	        gendertype.add("Male");
@@ -39,10 +39,11 @@ public class Register {
 
 
 		@RequestMapping(method=RequestMethod.POST)
-		public String loginsucces(@ModelAttribute("regForm")Registermodel reg,  Map<String, Object> model)
+		public String loginsucces(@ModelAttribute("regForm")Register reg,  Map<String, Object> model)
 		{
 			//System.out.println(reg.getEmail());
 			rgs.save(reg);
+		
 		
 			return "index";
 			

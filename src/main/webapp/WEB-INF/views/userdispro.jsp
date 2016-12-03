@@ -22,9 +22,9 @@ overflow:hidden;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
  padding: 5px;
-  width: 100px;
+  width: 80px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 2px;
@@ -71,7 +71,7 @@ function myFunction() {
    <a href="gotocart?proid=${pro.proid }">
   <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }"></a> 
  <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
- Quantity: <input type="number" id="myNumber"><br>
+ Quantity: <input type="number" id="myNumber"><br><br>
   <div class="button"  style="vertical-align:middle" ><span>BUY </span> </div>
     <div style="margin-top:5px;"><a class="btn btn-success "> ADD TO CART</a></div>
   

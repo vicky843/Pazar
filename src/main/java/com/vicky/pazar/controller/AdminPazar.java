@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vicky.pazar.dao.RegDAO;
 import com.vicky.pazar.model.Product;
-import com.vicky.pazar.model.Registermodel;
+import com.vicky.pazar.model.Register;
 
 @Controller
 public class AdminPazar {
@@ -27,9 +27,9 @@ public String home()
 @RequestMapping(value="/registervalues",method=RequestMethod.GET)
 public String viewRegi(ModelMap m) {
     
-    m.addAttribute("regForm",new Registermodel());
+    m.addAttribute("regForm",new Register());
     m.addAttribute("clickregtrs",1); 
-      String username=rgs.getreglist(new Registermodel());
+      String username=rgs.getreglist(new Register());
       m.addAttribute("getusername",username);
       System.out.println("this is working");
   	return "adminindex";

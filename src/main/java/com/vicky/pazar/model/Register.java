@@ -8,9 +8,9 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="register")
+@Table
 @Component
-public class Registermodel {
+public class Register {
 @Id
 	public String username;
 @Column
@@ -24,7 +24,18 @@ public String gender;
     
 @Column
 public String location;
+
+@Column
+public String role="user";
+
 	
+	public String getRole() {
+	return role;
+}
+	
+public void setRole(String role) {
+	this.role = role;
+}
 	public String getLocation() {
 	return location;
 }

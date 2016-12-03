@@ -15,10 +15,11 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.vicky.pazar.controller.Register;
+import com.vicky.pazar.controller.Registercontroller;
 import com.vicky.pazar.model.Categorymodel;
+import com.vicky.pazar.model.LoginFormmodel;
 import com.vicky.pazar.model.Product;
-import com.vicky.pazar.model.Registermodel;
+import com.vicky.pazar.model.Register;
 import com.vicky.pazar.model.Suppliermodel;
 
 @Configuration
@@ -51,10 +52,11 @@ public  SessionFactory getSessionFactory(DataSource dataSource)
 {
 	LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(dataSource);	
 	sessionBuilder.addProperties(getHibernateProperties());
-	sessionBuilder.addAnnotatedClass(Registermodel.class);
+	sessionBuilder.addAnnotatedClass(Register.class);
     sessionBuilder.addAnnotatedClass(Categorymodel.class);
     sessionBuilder.addAnnotatedClass(Suppliermodel.class);
     sessionBuilder.addAnnotatedClass(Product.class);
+    sessionBuilder.addAnnotatedClass(LoginFormmodel.class);
 	return sessionBuilder.buildSessionFactory();
 }
 @Autowired

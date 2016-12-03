@@ -4,6 +4,7 @@ public class LoginFormmodel {
 	
 	public String username;
 	public String password;
+	
 	public String getUsername() {
 		return username;
 	}
