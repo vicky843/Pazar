@@ -1,6 +1,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="k" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<link rel="stylesheet" href="http://path/to/font-awesome/css/font-awesome.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
 <head>
  
 <title>Insert title here</title>
@@ -54,6 +57,47 @@ overflow:hidden;
   opacity: 1;
   right: 0;
 }
+/* this is for add to cart styling */
+.buttons {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: wheat;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+ padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.buttons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttons:hover span {
+  padding-right: 25px;
+}
+
+.buttons:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 </style>
 <script>
 function myFunction() {
@@ -72,8 +116,8 @@ function myFunction() {
   <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }"></a> 
  <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
  Quantity: <input type="number" id="myNumber"><br><br>
-  <div class="button"  style="vertical-align:middle" ><span>BUY </span> </div>
-    <div class="button"  style="vertical-align:middle"> <span>ADD TO CART</span></div>
+  <div class="button"  style="vertical-align:middle" ><span class=""fa fa-inr" aria-hidden="true ">BUY </span> </div>
+    <div class="buttons"  style="vertical-align:middle"> <a href="addtocart?proid=${pro.proid }"><span class="glyphicon glyphicon-shopping-cart">ADD TO CART</a></span></div>
   
   </div>
   </div>

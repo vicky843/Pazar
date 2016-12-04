@@ -23,13 +23,14 @@ text-align:center;
 
 
 
-
+<h1>${message}</h1>
 <div class="container">
 <div class="col-sm-4 col-sm-offset-4">
 <div class="jumbotron">
 
 <img src="images/TROLLY.png" class="logo"  class="img-responsive"><Span>Pazar World</Span>
 <!-- <h3 >Pazar World</h3> -->
+<h4>${Checking}</h4>
 <k:form action="loginpage" method="post" commandName="loginForm">
 
 

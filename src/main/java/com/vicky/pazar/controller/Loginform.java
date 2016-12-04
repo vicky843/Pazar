@@ -45,7 +45,7 @@ RegDAO rgs;
 		{
 		String uname=rgs.usernames();
 		m.addAttribute("role",rgs.usernames());
-	
+	m.addAttribute("Checking","Welcome to user");
 		System.out.println(uname);
 		return "index";
 	}
@@ -56,6 +56,7 @@ RegDAO rgs;
 		}
 		else
 		{
+			m.addAttribute("message","InvalidUser");
 			m.addAttribute("clickloginsss",1);
 			return "index";
 			

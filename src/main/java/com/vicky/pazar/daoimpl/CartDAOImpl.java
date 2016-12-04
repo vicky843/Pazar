@@ -22,7 +22,7 @@ public class CartDAOImpl implements CartDAO {
 			sessionFactory.getCurrentSession().save(cart);
 			return true;
 		} 
-		catch (HibernateException e) {
+		catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
