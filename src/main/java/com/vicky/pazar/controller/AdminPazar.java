@@ -21,6 +21,7 @@ public class AdminPazar {
 @RequestMapping("/adminindex")//this is displaying header and footer.
 public String home()
 {
+	
 	return "adminindex";//it indicates index.jsp.
 	}
 

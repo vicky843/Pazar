@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,11 @@ import com.vicky.pazar.model.Register;
 import com.vicky.pazar.model.Suppliermodel;
 @Repository
 public class RegDAOImpl implements RegDAO {
+	@Autowired
+	SessionFactory seFactory;
+	
+	String urole;
+	String username;
 	private SessionFactory sessionFactory;//instance variable
 	public RegDAOImpl(SessionFactory sessionFactory)//local variable
 	{
@@ -49,7 +55,7 @@ public Registermodel getreg(String id) {
 	return reg;yy
 }*/
 @Transactional
-public String loginvalidate(LoginFormmodel login) {
+public boolean loginvalidate(LoginFormmodel login) {
 	String username=login.getUsername();
 	String password=login.getPassword();
 			String hql="from Register where username='"+username+"' and password='"+password+"'";//map tablename with DO class name.
@@ -57,23 +63,35 @@ public String loginvalidate(LoginFormmodel login) {
 	List<Register> reg=query.list();//reg will DO address.
 	System.out.println("this is loginvalidate"+hql);
 System.out.println("register"+reg);
-
+if(reg!=null)
+{
 for(Register t:reg)//this contains datatype :array name
 {
 	
-	if(t.getRole().equals("admin")){
-		
-		
-		return "adminindex";
-	}
-	else{
-		return "index";
-	}
 	
+		urole=t.getRole();
+		username=t.getUsername();
+		
+	}
+return true;
 }
-return username;
+	else{
+		return false;
+	}
 	
 
+	
+
+}
+@Transactional
+public String userrole() {
+	// TODO Auto-generated method stub
+	return urole;
+}
+@Transactional
+public String usernames() {
+	// TODO Auto-generated method stub
+	return username;
 }
 
 

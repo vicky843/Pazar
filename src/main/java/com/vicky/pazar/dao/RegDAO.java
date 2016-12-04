@@ -11,5 +11,9 @@ public interface RegDAO {
 public String getreglist(Register register);
 
 //public Registermodel getreg(String id);
-public String loginvalidate(LoginFormmodel login);
+public boolean loginvalidate(LoginFormmodel login);
+
+public String userrole();
+
+public String usernames();
 }

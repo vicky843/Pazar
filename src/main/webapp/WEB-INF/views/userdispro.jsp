@@ -73,7 +73,7 @@ function myFunction() {
  <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
  Quantity: <input type="number" id="myNumber"><br><br>
   <div class="button"  style="vertical-align:middle" ><span>BUY </span> </div>
-    <div style="margin-top:5px;"><a class="btn btn-success "> ADD TO CART</a></div>
+    <div class="button"  style="vertical-align:middle"> <span>ADD TO CART</span></div>
   
   </div>
   </div>
