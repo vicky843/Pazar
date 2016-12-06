@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class Cartmodel {
 
 	@Id
-	public String cartid;
+	public long cartid;
 	@Column
 	public String proid;
 	@Column
@@ -26,11 +26,11 @@ public class Cartmodel {
 	@Column
     public String 	dateadded;
 	
-	public String getCartid() {
+	public long getCartid() {
 		return cartid;
 	}
-	public void setCartid(String cartid) {
-		this.cartid = cartid;
+	public void setCartid(long l) {
+		this.cartid = l;
 	}
 	public String getProid() {
 		return proid;

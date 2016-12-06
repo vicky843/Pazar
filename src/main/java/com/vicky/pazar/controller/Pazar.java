@@ -79,7 +79,8 @@ public String staticuserpro(@RequestParam("proid") String prods,ModelMap m)
 	
 return "index";	
 }*/
-@RequestMapping(value="/displaycat",method=RequestMethod.GET)
+/*this is moved to cartcontroller*/
+/*@RequestMapping(value="/displaycat",method=RequestMethod.GET)
 public String getcatlist(@RequestParam("proid") String prods,ModelMap m)
 {
 m.addAttribute("userprods",1);
@@ -89,7 +90,7 @@ System.out.println(prod);
 m.addAttribute("getprodlist",prod);//this is used to get list from prodaoimp.
 
 	return "index";//it indicates index.jsp.
-	}
+	}*/
 /*@RequestMapping(value="/gotocart",method=RequestMethod.GET)
 public String cart(ModelMap m,@RequestParam("proid")String prosid)
 {
