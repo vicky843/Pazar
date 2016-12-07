@@ -29,7 +29,7 @@ public class Pazar {
 @RequestMapping("/")//this is displaying header and footer.
 public String home( ModelMap m,HttpSession session)
 {
-	
+	session.setAttribute("Login", "Logout");
 	String catlist=cats.getcatList(new Categorymodel());
 	session.setAttribute("catlist",catlist);
 	System.out.println("this is productdisplay"+catlist);

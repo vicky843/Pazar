@@ -1,12 +1,19 @@
 package com.vicky.pazar.daoimpl;
 
+
+import java.io.Serializable;
+import java.util.List;
+
+
+
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.vicky.pazar.dao.CartDAO;
-import com.vicky.pazar.model.Cartmodel;
+import com.vicky.pazar.model.Cart;
 @Repository
 public class CartDAOImpl implements CartDAO {
 
@@ -17,7 +24,7 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Transactional
-	public boolean save(Cartmodel cart) {
+	public boolean save(Cart cart) {
 		try {
 			sessionFactory.getCurrentSession().save(cart);
 			return true;
@@ -28,6 +35,24 @@ public class CartDAOImpl implements CartDAO {
 			return false;
 		}
 		
+	}
+
+	@Transactional
+	public List<Cart> getcartlist(String username) {
+		String hql="from Cart where username='"+username+"'";
+	Query query=sessionFactory.getCurrentSession().createQuery(hql);
+	@SuppressWarnings("unchecked")
+	List<Cart> carid=query.list();
+	System.out.println(hql+"this is cartimp"+carid);
+		return carid;
+	}
+
+	@Transactional
+	public boolean delete(Cart carid) {
+		System.out.println("deletecartimp");
+ Cart c=(Cart)sessionFactory.getCurrentSession().get(Cart.class, (Serializable) carid);
+sessionFactory.getCurrentSession().delete(c);	
+return true;
 	}
 
 }

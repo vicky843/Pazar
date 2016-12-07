@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>PAZAR</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -81,7 +81,7 @@ box-shadow: 5px 5px 10px #202020
         </button>
         </form>
          <ul class="nav navbar-nav pull-right">
-        
+        <li><a href="addcart"><span class="glyphicon glyphicon-shopping-cart"></span>MyCart</a></li>
         <li><a href="register"   ><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a href="loginpage" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
            

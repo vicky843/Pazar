@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome To Admin
+<div class="jumbotron">Welcome To Admin</div>
+
 </body>
 </html>

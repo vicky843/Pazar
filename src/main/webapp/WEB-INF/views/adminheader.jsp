@@ -54,7 +54,7 @@ box-shadow: 5px 5px 10px #202020
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-left">
-        <a class="navbar-brand" href="home">HOME</a>
+        <a href="adminindex" class="navbar-brand" >HOME</a>
         <li class="dropdown">
           <a   href="category">Category</a>
           
@@ -63,7 +63,10 @@ box-shadow: 5px 5px 10px #202020
         <li><a  href="product">Products</a></li>
          <li><a  href="registervalues">Registered users</a></li>
       </ul>
-      
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        </ul>
+        
     </div>
   </div>
 </nav>

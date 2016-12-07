@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 
 @Entity
-@Table(name="cart")
+@Table
 @Component
-public class Cartmodel {
+public class Cart {
 
 	@Id
 	public String cartid;
@@ -25,7 +25,22 @@ public class Cartmodel {
 	public String quantity;
 	@Column
     public String 	date_added;
-	
+	@Column
+	public String proname;
+	@Column
+	public String username;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getProname() {
+		return proname;
+	}
+	public void setProname(String proname) {
+		this.proname = proname;
+	}
 	public String getCartid() {
 		return cartid;
 	}

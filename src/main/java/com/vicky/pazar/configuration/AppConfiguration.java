@@ -16,7 +16,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.vicky.pazar.controller.Registercontroller;
-import com.vicky.pazar.model.Cartmodel;
+import com.vicky.pazar.model.Cart;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.LoginFormmodel;
 import com.vicky.pazar.model.Product;
@@ -58,7 +58,7 @@ public  SessionFactory getSessionFactory(DataSource dataSource)
     sessionBuilder.addAnnotatedClass(Suppliermodel.class);
     sessionBuilder.addAnnotatedClass(Product.class);
     sessionBuilder.addAnnotatedClass(LoginFormmodel.class);
-    sessionBuilder.addAnnotatedClass(Cartmodel.class);
+    sessionBuilder.addAnnotatedClass(Cart.class);
 	return sessionBuilder.buildSessionFactory();
 }
 @Autowired

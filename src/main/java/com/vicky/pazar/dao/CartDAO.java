@@ -1,8 +1,16 @@
 package com.vicky.pazar.dao;
 
-import com.vicky.pazar.model.Cartmodel;
+import java.util.List;
+
+import com.vicky.pazar.model.Cart;
+
+
 
 public interface CartDAO {
 
-	public boolean save(Cartmodel cart);
+	public boolean save(Cart cart);
+	
+	public List<Cart>getcartlist(String username);
+	//this is used to display list
+	public boolean delete(Cart carid);
 }

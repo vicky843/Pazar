@@ -46,7 +46,9 @@ RegDAO rgs;
 		String uname=rgs.usernames();
 		m.addAttribute("role",rgs.usernames());
 	m.addAttribute("Checking","Welcome to user");
-		System.out.println(uname);
+	sess.setAttribute("name",rgs.usernames());
+		System.out.println("login"+uname);
+		
 		return "index";
 	}
 		else if(valid && rgs.userrole().equals("admin"))

@@ -70,7 +70,7 @@ for(Register t:reg)//this contains datatype :array name
 	
 	
 		urole=t.getRole();
-		username=t.getUsername();
+	this.username=t.getUsername();
 		
 	}
 return true;
@@ -83,12 +83,12 @@ return true;
 	
 
 }
-@Transactional
+@Override
 public String userrole() {
 	// TODO Auto-generated method stub
 	return urole;
 }
-@Transactional
+@Override
 public String usernames() {
 	// TODO Auto-generated method stub
 	return username;
