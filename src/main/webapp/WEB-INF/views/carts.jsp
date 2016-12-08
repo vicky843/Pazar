@@ -13,32 +13,36 @@
 
 		<tr>
 		<th>ProductImage</th>
-<th>Cartid</th>
+<!-- <th>Cartid</th> -->
 <th>Username</th>
-<th>Productid</th>
+<!-- <th>Productid</th> -->
 <th>Productname</th>
 <th>Productprice</th>
-<th>Status</th>
+<th>Quantity</th>
+<!-- <th>Totalprice</th> -->
 <th>Date_Added</th>
 <th>Remove from Cart</th>
+<th>Update</th>
 
 
 		</tr>
 <k:forEach items="${getcartlist }" var="cart">
 <tr>
 
-<td><img alt="${cart.proname}" src="images/${cart.proid}.jpg" width="50px" height="50px" ></td>
+<td><img alt="${cart.proname}" src="images/${cart.proid}.jpg" width="80px" height="80px" ></td>
 
-<td>${cart.cartid }</td>
+<%-- <td>${cart.cartid }</td> --%>
 
 <td>${cart.username }</td>
-<td>${cart.proid }</td>
+<%-- <td>${cart.proid }</td> --%>
 <td>${cart.proname }</td>
 <td>${cart.proprice }</td>
-<td>${cart.status }</td>
+<td><input min=1 max=10 type="number" id="myNumber" value=" ${cart.quantity }"></td>
+<%-- <td>${cart.totalprice }</td> --%>
 <td>${cart.date_added }</td>
-<td><a href="del?cartid={{cart.cartid}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-            <!-- <td><a href="updated?supid={{sup.supid}}" class="btn btn-success"><span class="glyphicon glyphicon-trash"></span></a></td> -->
+<td><a href="del?cartid=${cart.cartid}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="updatecart?cartid=${cart.cartid}" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            
 </tr>
 </k:forEach>
 	</table>

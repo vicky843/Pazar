@@ -18,17 +18,25 @@ public class Cart {
 	@Column
 	public String proid;
 	@Column
-	public String proprice;
+	public int proprice;
 	@Column
 	public String status;
 	@Column
-	public String quantity;
+	public int quantity;
 	@Column
     public String 	date_added;
 	@Column
 	public String proname;
 	@Column
 	public String username;
+	@Column
+	public int totalprice;
+	public int getTotalprice() {
+		return totalprice;
+	}
+	public void setTotalprice(int totalprice) {
+		this.totalprice = totalprice;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -53,11 +61,11 @@ public class Cart {
 	public void setProid(String proid) {
 		this.proid = proid;
 	}
-	public String getProprice() {
+	public int getProprice() {
 		return proprice;
 	}
-	public void setProprice(String proprice) {
-		this.proprice = proprice;
+	public void setProprice(int i) {
+		this.proprice = i;
 	}
 	public String getStatus() {
 		return status;
@@ -65,10 +73,10 @@ public class Cart {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public String getDate_added() {

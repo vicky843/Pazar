@@ -20,7 +20,7 @@ public String proid;
 public String proname;
 	
 	@Column
-public String proprice;
+public int proprice;
 	
 	@Column
 public String proscatid;
@@ -67,10 +67,10 @@ public String getProname() {
 public void setProname(String proname) {
 	this.proname = proname;
 }
-public String getProprice() {
+public int getProprice() {
 	return proprice;
 }
-public void setProprice(String proprice) {
+public void setProprice(int proprice) {
 	this.proprice = proprice;
 }
 public String getProscatid() {

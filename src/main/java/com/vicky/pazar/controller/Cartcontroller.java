@@ -42,7 +42,7 @@ public class Cartcontroller {
 		return "index";//it indicates index.jsp.
 		}
 	@RequestMapping(value="/addtocart",method=RequestMethod.GET)
-	public String addcart(@RequestParam("proid") String pid,ModelMap m,HttpSession sess)
+	public String addcart(@RequestParam("proid") String pid, ModelMap m,HttpSession sess)
 	{
 		String pattern="yyyy-MM-dd ";
           m.addAttribute("cart",new Cart());		
@@ -59,6 +59,8 @@ public class Cartcontroller {
 	String randomid = UUID.randomUUID().toString();
 
 	Date dates = new Date();
+int quantity=1;
+int totalprice=quantity*pro.getProprice();
 
 	SimpleDateFormat currentdate = new SimpleDateFormat(pattern);
 	String cartdate = currentdate.format(dates);
@@ -66,8 +68,9 @@ public class Cartcontroller {
 cart.setCartid(randomid);
 	cart.setProid(pro.getProid());
 cart.setProprice(pro.getProprice());
-cart.setQuantity("1");
+cart.setQuantity(1);
 cart.setStatus("N");
+cart.setTotalprice(totalprice);
 cart.setDate_added(cartdate);
 cart.setUsername((String) sess.getAttribute("name"));
 cart.setProname(pro.getProname());
@@ -93,12 +96,28 @@ return "index";
 		return "index";
 		
 	}
-@RequestMapping("/del")
-public String del(@RequestParam("cartid")Cart cd,ModelMap m)
+@RequestMapping(value="/del")
+public String del(@RequestParam("cartid")String cd,ModelMap m)
 {
 	System.out.println("in del1");
 	car.delete(cd);
 	System.out.println("in del2");
+	List<Cart>cartslist=car.getcartlist(cd);
+	m.addAttribute("getcartlist",cartslist);
+	m.addAttribute("cart",1);
 return "index";	
 }
+@RequestMapping(value="/updatecart",method=RequestMethod.GET)
+public String updating(@RequestParam("cartid")String cid,ModelMap m)
+{
+m.addAttribute("cart",1);
+List<Cart> cart=car.getcartlist(cid);
+m.addAttribute("getcartlist",cart);
+System.out.println("cartupdatecontroller");
+System.out.println(cart);
+return "index";
 }
+}
+
+
+

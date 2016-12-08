@@ -41,18 +41,26 @@ public class CartDAOImpl implements CartDAO {
 	public List<Cart> getcartlist(String username) {
 		String hql="from Cart where username='"+username+"'";
 	Query query=sessionFactory.getCurrentSession().createQuery(hql);
-	@SuppressWarnings("unchecked")
+
+	System.out.println("query"+hql);
 	List<Cart> carid=query.list();
 	System.out.println(hql+"this is cartimp"+carid);
 		return carid;
 	}
 
 	@Transactional
-	public boolean delete(Cart carid) {
+	public boolean delete(String carid) {
 		System.out.println("deletecartimp");
- Cart c=(Cart)sessionFactory.getCurrentSession().get(Cart.class, (Serializable) carid);
+ Cart c=(Cart)sessionFactory.getCurrentSession().get(Cart.class,  carid);
 sessionFactory.getCurrentSession().delete(c);	
 return true;
+	}
+
+	@Transactional
+	public boolean update(Cart cart) {
+		sessionFactory.getCurrentSession().update(cart);
+		System.out.println("update cart");
+		return false;
 	}
 
 }
