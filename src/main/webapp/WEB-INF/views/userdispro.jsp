@@ -112,7 +112,7 @@ function myFunction() {
 <div class="well" >
  <a href="displaycat?proid=${cat.catid}"></a>
   <b>${pro.proname}</b><br>
-   <a href="gotocart?proid=${pro.proid }">
+<%--    <a href="gotocart?proid=${pro.proid }"> --%>
   <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }"></a> 
  <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
  Quantity: <input min=1 max=10 type="number" id="myNumber"><br><br>

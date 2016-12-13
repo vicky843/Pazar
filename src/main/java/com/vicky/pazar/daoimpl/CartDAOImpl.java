@@ -57,10 +57,13 @@ return true;
 	}
 
 	@Transactional
-	public boolean update(Cart cart) {
-		sessionFactory.getCurrentSession().update(cart);
+	public boolean update(String  cartid) {
+		
+		 Cart c=(Cart)sessionFactory.getCurrentSession().get(Cart.class,  cartid);
+		sessionFactory.getCurrentSession().update(c);
 		System.out.println("update cart");
 		return false;
 	}
 
+	
 }

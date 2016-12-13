@@ -16,7 +16,10 @@
 {
 font-size=200px;
 background-color:white;
-text-align: center;}
+text-align: center;
+/*  filter:drop-shadow(5px 5px 10px #202020); */
+/*  box-shadow: 5px 5px 10px #202020 */
+}
 h5{
 text-align: center;
 }
@@ -26,31 +29,35 @@ text-align: center;
 </style>
 </head>
 <body>
-<hr></hr>
-<footer color="grey">
-<div class="container-fluid">
-<div class="container">
+ <hr></hr> 
+<footer >
+<div class="container-fluid footer" >
+<div class="container ">
 
 <div class="row">
 
 <div class="col-sm-1">
-
+<br>
 <img  src="images/TROLLY.png"  class="brand" height="12%"  width="150%"    />
 </div>
 
 <div class="col-sm-3">
+<br>
 <h5>
+<br><br>
 						<b>Copyright &copy; 2016 PAZAR</b></h5>
 						
 </div>
 
 <div class="col-sm-3">
+<br>
 <h4>Made with&nbsp;<span class="fa fa-heart fa-1x"></span>&nbsp;at Pazar, India.</h4>
 
 <br>
 						<p>Logo Designed by<br> @Shanawaz Memon</p>
 </div><!--end of row div  --> 
 <div class="col-sm-3">
+<br>
 <p class="txt-railway" ><b>Follow us</b></p>
 <a href="#"><span class="fa fa-facebook-square fa-2x" style="color:black" aria-hidden="true"></span></a> 
 					<a href="#"><span class="fa fa-linkedin-square fa-2x" style="color:black" aria-hidden="true"></span></a>
@@ -60,17 +67,11 @@ text-align: center;
 
 </div>
 <div class="col-sm-2">
-<div class="text-right" style="padding:0 15px 5px 0"><a href="#"><span class="glyphicon glyphicon-circle-arrow-up"></span> Top of the Page</a></div>
+<br>
+<div class="text-right" style="padding:0 15px 5px 0"><br><br><a href="#"><span class="glyphicon glyphicon-circle-arrow-up"></span> Top of the Page</a></div>
 
 </div>
-
-
 </div><!-- end of container div -->
-
-
-
-
-
 </div>
 </div>
 </footer><!-- end of footer -->

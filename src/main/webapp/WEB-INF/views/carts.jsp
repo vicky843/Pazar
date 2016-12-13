@@ -21,6 +21,7 @@
 <th>Quantity</th>
 <!-- <th>Totalprice</th> -->
 <th>Date_Added</th>
+<th>TotalPrice</th>
 <th>Remove from Cart</th>
 <th>Update</th>
 
@@ -34,12 +35,13 @@
 <%-- <td>${cart.cartid }</td> --%>
 
 <td>${cart.username }</td>
-<%-- <td>${cart.proid }</td> --%>
+ <td><input type="hidden" value="${cart.proid }"/></td>
 <td>${cart.proname }</td>
 <td>${cart.proprice }</td>
 <td><input min=1 max=10 type="number" id="myNumber" value=" ${cart.quantity }"></td>
 <%-- <td>${cart.totalprice }</td> --%>
 <td>${cart.date_added }</td>
+<td>${cart.totalprice }</td>
 <td><a href="del?cartid=${cart.cartid}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
             <td><a href="updatecart?cartid=${cart.cartid}" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a></td>
             

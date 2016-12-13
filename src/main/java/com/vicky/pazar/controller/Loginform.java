@@ -56,7 +56,7 @@ RegDAO rgs;
 			
 			return "adminindex";
 		}
-		else if(rgs.userrole().equals(""))
+		else if(rgs.userrole()!="admin"&&rgs.userrole()!="user")
 		{
 			m.addAttribute("message","InvalidUser");
 			m.addAttribute("clickloginsss",1);

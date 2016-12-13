@@ -14,5 +14,7 @@ public interface CartDAO {
 	//this is used to display list
 	public boolean delete(String carid);
 	
-	public boolean update(Cart cart);
+	public boolean update(String  cartid);
+	
+
 }
