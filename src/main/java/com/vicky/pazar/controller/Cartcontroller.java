@@ -119,9 +119,9 @@ public String del(@RequestParam("cartid")String cd,HttpSession sess,ModelMap m)
 return "index";	
 }
 @RequestMapping(value="/updatecart",method=RequestMethod.GET)
-public String updating(@RequestParam("cartid")String cid,ModelMap m,HttpSession sess)
+public String updating(@RequestParam("cartid")String cid,@RequestParam("quantity")int qid,ModelMap m,HttpSession sess)
 {
-	car.update(cid);
+	car.update(cid,qid);
 System.out.println("cart update process");
 List<Cart> cart=car.getcartlist((String) sess.getAttribute("name"));
 m.addAttribute("getcartlist",cart);

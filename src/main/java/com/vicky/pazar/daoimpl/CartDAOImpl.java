@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vicky.pazar.dao.CartDAO;
 import com.vicky.pazar.model.Cart;
+import com.vicky.pazar.model.Product;
 @Repository
 public class CartDAOImpl implements CartDAO {
 
@@ -57,10 +58,13 @@ return true;
 	}
 
 	@Transactional
-	public boolean update(String  cartid) {
+	public boolean update(String  cartid,int quantity) {
 		
 		 Cart c=(Cart)sessionFactory.getCurrentSession().get(Cart.class,  cartid);
-		sessionFactory.getCurrentSession().update(c);
+		int totalprice=c.getProprice();
+		 c.setQuantity(quantity);
+		c.setTotalprice(quantity*totalprice);
+		 sessionFactory.getCurrentSession().update(c);
 		System.out.println("update cart");
 		return false;
 	}
