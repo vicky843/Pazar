@@ -41,6 +41,7 @@ private SessionFactory sessionFactory;
 		List<Categorymodel> cat_list=(List<Categorymodel>)sessionFactory.getCurrentSession().createCriteria(Categorymodel.class).list();
 				Gson gson=new Gson();
 			String cat_json=gson.toJson(cat_list);
+			System.out.println("this is productjson"+cat_json);
 		return cat_json;
 	}
 	@Transactional
