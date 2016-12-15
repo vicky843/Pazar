@@ -6,7 +6,7 @@
                  
 <var name="order"  class="com.vicky.pazar.model.Ordermodel"  /> 
 <var name="shippingAddress" class="com.vicky.pazar.model.Shippingmodel"  /> 
-<var name="billing" class="com.vicky.pazar.model.Billingmodel"  /> 
+<var name="billingAddress" class="com.vicky.pazar.model.Billingmodel"  /> 
 <on-start>
 	  <evaluate expression="checkOutFlow.initFlow()" result="flowScope.order"/>
 
@@ -16,8 +16,11 @@
 </view-state>
 
 <action-state id="shippingDetails">
-<evaluate expression=""></evaluate>
-<transition on="" to=""></transition>
+<evaluate expression="checkOutFlow.addshipdetails(Ordermodel order,Shippingmodel shipaddress)"></evaluate>
+<transition on="buyingprocess" to="bills"></transition>
 </action-state>
+<view-state id="bills" view="billing" model="billingAddress">
+<transition on="savebill" to="billingDetails"></transition>
+</view-state>
 
 </flow>
