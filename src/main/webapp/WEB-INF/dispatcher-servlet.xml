@@ -31,7 +31,7 @@
  
 <webflow:flow-registry id="flowRegistry"
 		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
-		<webflow:flow-location id="web" path="/webflow.xml" />
+		<webflow:flow-location id="buying" path="/webflow.xml" />
 	</webflow:flow-registry>
 <webflow:flow-builder-services id="flowBuilderServices"
 		view-factory-creator="viewFactoryCreator" />

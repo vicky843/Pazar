@@ -1,10 +1,16 @@
 package com.vicky.pazar.model;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
 @Component
-public class Billingmodel {
+public class Billingmodel implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String getFirstname() {
 		return firstname;
 	}
