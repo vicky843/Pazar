@@ -16,11 +16,21 @@
 </view-state>
 
 <action-state id="shippingDetails">
-<evaluate expression="checkOutFlow.addshipdetails(Ordermodel order,Shippingmodel shipaddress)"></evaluate>
+<evaluate expression="checkOutFlow.addShipdetails(flowScope.order, shippingAddress)"></evaluate>
 <transition on="buyingprocess" to="bills"></transition>
 </action-state>
 <view-state id="bills" view="billing" model="billingAddress">
 <transition on="savebill" to="billingDetails"></transition>
-</view-state>
+</view-state> 
+<action-state id="billingDetails" >
+<evaluate expression="checkOutFlow.addBilldetails(flowScope.order,billingAddress)"></evaluate>
+<transition on="buyingprocess" to="orde"></transition>
 
+
+</action-state>
+<view-state id="orde" view="Notes" model="order" >
+<transition on="save" to="address"></transition>
+
+
+</view-state>
 </flow>

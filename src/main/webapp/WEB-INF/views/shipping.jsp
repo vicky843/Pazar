@@ -17,7 +17,7 @@ this is shipping part
 <k:input path="state" type="text" placeholder="state" ></k:input>
 <k:input path="country" type="text" placeholder="country" ></k:input>
 
-<k:button type="button" name="saveship">lanja</k:button>
+<k:button type="submit" name="_eventId_saveship">Submit</k:button>
 </k:form>
 </body>
 </html>

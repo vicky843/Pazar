@@ -19,6 +19,7 @@ import com.vicky.pazar.controller.Registercontroller;
 import com.vicky.pazar.model.Cart;
 import com.vicky.pazar.model.Categorymodel;
 import com.vicky.pazar.model.LoginFormmodel;
+import com.vicky.pazar.model.Ordermodel;
 import com.vicky.pazar.model.Product;
 import com.vicky.pazar.model.Register;
 import com.vicky.pazar.model.Suppliermodel;
@@ -59,6 +60,7 @@ public  SessionFactory getSessionFactory(DataSource dataSource)
     sessionBuilder.addAnnotatedClass(Product.class);
     sessionBuilder.addAnnotatedClass(LoginFormmodel.class);
     sessionBuilder.addAnnotatedClass(Cart.class);
+    sessionBuilder.addAnnotatedClass(Ordermodel.class);
 	return sessionBuilder.buildSessionFactory();
 }
 @Autowired

@@ -18,12 +18,12 @@
 <!-- <th>Productid</th> -->
 <th>Productname</th>
 <th>Productprice</th>
-<th>Quantity</th>
+<th>Quantity_Update</th>
 <!-- <th>Totalprice</th> -->
 <th>Date_Added</th>
 <th>TotalPrice</th>
 <th>Remove from Cart</th>
-<th>Update</th>
+<!-- <th>Update</th> -->
 
 
 
