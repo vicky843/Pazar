@@ -1,5 +1,7 @@
 package com.vicky.pazar.webflow;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +20,14 @@ OrderDAO ordi;
 		Ordermodel orders=new Ordermodel();
 		return orders;
 	}
-	public String addShipdetails(Ordermodel order,Shippingmodel shipaddress )
+	public String addShipdetails(Ordermodel order,Shippingmodel shipaddress,HttpSession sess )
 	{
 		Gson gson=new Gson();
 		String shipaddressng=gson.toJson(shipaddress);
 		System.out.println("this is shipng"+shipaddress);
 order.setShippingaddress(shipaddressng);
+sess.setAttribute("shipaddress", shipaddress);
+
 		return "buyingprocess";
 		
 	}
@@ -35,12 +39,12 @@ public String addBilldetails(Ordermodel order,Billingmodel billaddress)
 	order.setBillingaddress(jobson);
 return"buyingprocess";
 }
-/*public String saveorder(Ordermodel order)
+public String saveorder(Ordermodel order)
 {
 	System.out.println("it is in saving order process");
 	ordi.save(order);
 return "buyingprocess";	
-}*/
+}
 
 }
 

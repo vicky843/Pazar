@@ -28,9 +28,12 @@
 
 
 </action-state>
-<view-state id="orde" view="Notes" model="order" >
+<view-state id="orde" view="order" model="order" >
 <transition on="save" to="address"></transition>
-
-
 </view-state>
+<action-state id="address" >
+<evaluate expression="checkOutFlow.saveorder(flowScope.order)">
+</evaluate>
+<transition on="buyingprocess" to="new"></transition>
+</action-state>
 </flow>

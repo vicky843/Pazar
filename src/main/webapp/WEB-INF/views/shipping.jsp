@@ -7,7 +7,8 @@
 </head>
 <body>
 this is shipping part
-
+<div class="container-fluid">
+<div class="col-sm-4">
 <k:form method="post" commandName="shippingAddress">
 <k:input path="firstname" type="text" placeholder="firstname" ></k:input>
 <k:input path="lastname" type="text" placeholder="lastname" ></k:input>
@@ -19,5 +20,6 @@ this is shipping part
 
 <k:button type="submit" name="_eventId_saveship">Submit</k:button>
 </k:form>
+</div></div>
 </body>
 </html>
