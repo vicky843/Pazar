@@ -84,7 +84,7 @@ box-shadow: 5px 5px 10px #202020
         <li><a href="addcart"><span class="glyphicon glyphicon-shopping-cart"></span>MyCart</a></li>
         <li><a href="register"   ><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a href="loginpage" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-           
+         <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>  
       </ul>
     </div>
   </div>

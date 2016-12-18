@@ -31,7 +31,7 @@ text-align:center;
 <img src="images/TROLLY.png" class="logo"  class="img-responsive"><Span>Pazar World</Span>
 <!-- <h3 >Pazar World</h3> -->
 <h4>${Checking}</h4>
-<k:form action="loginpage" method="post" commandName="loginForm">
+<k:form action="loginsucces" method="post" commandName="loginForm">
 
 
 

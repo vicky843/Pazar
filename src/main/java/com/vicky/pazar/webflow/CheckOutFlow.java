@@ -1,9 +1,11 @@
 package com.vicky.pazar.webflow;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.webflow.execution.RequestContext;
 
 import com.google.gson.Gson;
 import com.vicky.pazar.dao.OrderDAO;
@@ -20,13 +22,14 @@ OrderDAO ordi;
 		Ordermodel orders=new Ordermodel();
 		return orders;
 	}
-	public String addShipdetails(Ordermodel order,Shippingmodel shipaddress,HttpSession sess )
+	public String addShipdetails(Ordermodel order,Shippingmodel shipaddress,RequestContext context )
 	{
 		Gson gson=new Gson();
 		String shipaddressng=gson.toJson(shipaddress);
 		System.out.println("this is shipng"+shipaddress);
-order.setShippingaddress(shipaddressng);
-sess.setAttribute("shipaddress", shipaddress);
+		HttpSession session = ((HttpServletRequest)context.getExternalContext().getNativeRequest()).getSession();
+
+		order.setShippingaddress(shipaddressng);
 
 		return "buyingprocess";
 		

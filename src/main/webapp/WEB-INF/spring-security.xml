@@ -20,9 +20,11 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 <security:intercept-url pattern="/adminindex" access="hasRole('ROLE_ADMIN')" />  
     
 
-<security:form-login login-page="/loginpage"  />
+<security:form-login login-page="/loginpage" 
+login-processing-url="/loginsucces"
+authentication-success-forward-url="/loginsucces"
 
-<security:logout logout-url="/perform_logout" invalidate-session="true" logout-success-url="/" />
+ />
 
 <security:csrf disabled="true" />
 
@@ -32,7 +34,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username,password from register where username=?"
+				users-by-username-query="select username,password,'true' as enabled from register where username=?"
 				authorities-by-username-query="select username, role from register  where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
