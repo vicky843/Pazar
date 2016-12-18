@@ -18,8 +18,19 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 <security:http auto-config="true" use-expressions="true">
 
 <security:intercept-url pattern="/adminindex" access="hasRole('ROLE_ADMIN')" />  
-    
 
+<security:intercept-url pattern="/category**" access="hasRole('ROLE_ADMIN')"/>
+
+<security:intercept-url pattern="/product**" access="hasRole('ROLE_ADMIN')"/>
+
+<security:intercept-url pattern="/supplier**" access="hasRole('ROLE_ADMIN')"/>
+
+<security:intercept-url pattern="/addcart" access="hasRole('ROLE_USER')"/>
+
+<security:intercept-url pattern="/buying" access="hasRole('ROLE_USER')"/>
+
+
+<security:intercept-url pattern="/addtocart**" access="hasRole('ROLE_USER')"/>
 <security:form-login login-page="/loginpage" 
 login-processing-url="/loginsucces"
 authentication-success-forward-url="/loginsucces"

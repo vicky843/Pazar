@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.webflow.execution.RequestContext;
 
@@ -30,16 +31,22 @@ OrderDAO ordi;
 		HttpSession session = ((HttpServletRequest)context.getExternalContext().getNativeRequest()).getSession();
 
 		order.setShippingaddress(shipaddressng);
-
+		String	userid= SecurityContextHolder.getContext().getAuthentication().getName();
+		   session.setAttribute("shipaddress",shipaddress);
 		return "buyingprocess";
 		
 	}
-public String addBilldetails(Ordermodel order,Billingmodel billaddress)
+public String addBilldetails(Ordermodel order,Billingmodel billaddress,RequestContext context)
 {
 	
 	Gson gson=new Gson();
 	String jobson=gson.toJson(billaddress);
+
+	HttpSession session = ((HttpServletRequest)context.getExternalContext().getNativeRequest()).getSession();
 	order.setBillingaddress(jobson);
+/*	String	userid= SecurityContextHolder.getContext().getAuthentication().getName();*/
+	session.setAttribute("billaddress",billaddress);
+	/*session.setAttribute("userid",userid);*/
 return"buyingprocess";
 }
 public String saveorder(Ordermodel order)

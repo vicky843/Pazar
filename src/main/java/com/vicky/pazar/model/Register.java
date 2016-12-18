@@ -26,13 +26,12 @@ public String gender;
 public String location;
 
 @Column
-public String role="user";
+public String role="ROLE_USER";
 
 	
 	public String getRole() {
 	return role;
 }
-	
 public void setRole(String role) {
 	this.role = role;
 }
