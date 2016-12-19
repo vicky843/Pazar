@@ -64,7 +64,7 @@ box-shadow: 5px 5px 10px #202020
          <li><a  href="registervalues">Registered users</a></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
         </ul>
         
     </div>

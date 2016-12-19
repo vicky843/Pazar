@@ -73,54 +73,20 @@ ${user}<br>
 </div>
 </div>
 <table class="table table-bordered table-hover" >
- <thead>
  
       <tr >
         <th class="text-center" >Product</th>
         <th class="text-center" >Quantity</th>
-          <th class="text-center" >Date</th>
-            <th class="text-center"  >Price</th>
-            
-         
-         
         
       </tr>
-    </thead>
-
-
-<%--   <k:forEach items='<%=session.getAttribute("carted_list")%>' var="car"> 
-<tbody>
+      <k:forEach var="carts" items='<%session.getAttribute("getcartlist")%>'>
       <tr>
-        
-        <td class="text-center"><img width="30px" height="60px" src="pro_images/${car.pro_id}.jpg"><span style="margin-left: 50px;">
-        <b >${car.pro_name}</b></span></td>
-        <td class="text-center"> 
-       ${car.quantity}
-        </td>
-        <td class="text-center"><div style="margin-top:20px;">${car.date_cart}</div></td>
-           <td class="text-center"><div style="margin-top:20px;">${car.price}</div></td>
-          
+      <td>
+      </td>
       </tr>
+      </k:forEach>
       
-    </tbody>
-   
- </k:forEach> --%>
- 
- 
-  </table>
- <%--  <b style="font-size: 20px; color: red;" class="pull-right">Total:    <%=session.getAttribute("total")%></b>
-  </div>
- 
-<div class="panel-footer">
-  
- <h6>@ShopOn</h6>
- 
-<f:form modelAttribute="order">
-<div class="pull-right" style="position:relative; top:-30px;"> <f:button type="submit" name="_eventId_submitOrder" value="confirm order" class="btn btn-success ">Confirm Order</f:button></div>
-<div class="pull-left" style="position:relative; top:-40px; "><f:button type="submit" name="_eventId_cancel" class="btn btn-danger " style="margin-top:10px; ">Cancel</f:button></div>
- --%>
-<!-- </f:form> -->
-
+ </table>   
     </div>
   </div>
 </div>

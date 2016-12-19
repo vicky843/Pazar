@@ -7,17 +7,20 @@
 </head>
 <body>
 <h1>this is billing</h1>
-
+<div class="container-fluid text-center">
+<div class="col-sm-4">
 <k:form method="post" commandName="shippingAddress">
-<k:input path="firstname" type="text" placeholder="firstname" ></k:input>
-<k:input path="lastname" type="text" placeholder="lastname" ></k:input>
-<k:input path="address_line1" type="text" placeholder="address_line1" ></k:input>
-<k:input path="city" type="text" placeholder="city" ></k:input>
-<k:input path="pin_code" type="text" placeholder="pin_code" ></k:input>
-<k:input path="state" type="text" placeholder="state" ></k:input>
-<k:input path="country" type="text" placeholder="country" ></k:input>
+<k:input path="firstname" type="text" placeholder="firstname" ></k:input><br>
+<k:input path="lastname" type="text" placeholder="lastname" ></k:input><br>
+<k:input path="address_line1" type="text" placeholder="address_line1" ></k:input><br>
+<k:input path="city" type="text" placeholder="city" ></k:input><br>
+<k:input path="pin_code" type="text" placeholder="pin_code" ></k:input><br>
+<k:input path="state" type="text" placeholder="state" ></k:input><br>
+<k:input path="country" type="text" placeholder="country" ></k:input><br>
 
-<k:button type="submit" name="_eventId_savebill">Submit</k:button>
+<k:button type="submit" name="_eventId_savebill">Submit</k:button><br>
 </k:form>
+</div>
+</div>
 </body>
 </html>

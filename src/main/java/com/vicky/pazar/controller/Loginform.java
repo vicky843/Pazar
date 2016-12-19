@@ -100,7 +100,5 @@ String userid = SecurityContextHolder.getContext().getAuthentication().getName()
 		}
 		
 		return "index";
-	}
-	
-	
+	}	
 }

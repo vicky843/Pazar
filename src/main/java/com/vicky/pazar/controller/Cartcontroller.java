@@ -31,7 +31,7 @@ public class Cartcontroller {
 	@Autowired
 	Product pro;
 	@RequestMapping(value="/displaycat",method=RequestMethod.GET)
-	public String getcatlist(@RequestParam("proid") String prods,ModelMap m)
+	public String getcatlist(@RequestParam("proid") String prods,ModelMap m,HttpSession sess)
 	{
 	m.addAttribute("userprods",1);
 	List<Product> prod=pros.getprodlist(prods);

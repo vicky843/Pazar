@@ -46,6 +46,7 @@ public String addBilldetails(Ordermodel order,Billingmodel billaddress,RequestCo
 	order.setBillingaddress(jobson);
 /*	String	userid= SecurityContextHolder.getContext().getAuthentication().getName();*/
 	session.setAttribute("billaddress",billaddress);
+	
 	/*session.setAttribute("userid",userid);*/
 return"buyingprocess";
 }
