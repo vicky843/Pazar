@@ -35,6 +35,7 @@ public class Cartcontroller {
 	{
 	m.addAttribute("userprods",1);
 	List<Product> prod=pros.getprodlist(prods);
+sess.setAttribute("prodss", prod);
 
 	System.out.println(prod);
 	m.addAttribute("getprodlist",prod);//this is used to get list from prodaoimp.
@@ -92,7 +93,7 @@ System.out.println("cartview2"+cart.getQuantity());
 /*List<Product> prod=pros.getprodlist(pid);*/
 /*m.addAttribute("getprodlist",prod);*/
 System.out.println("returning cart"+pro);
-m.addAttribute("userprods",1);
+
 return "index";
 	}
 	@RequestMapping(value="/addcart",method=RequestMethod.GET)

@@ -23,6 +23,14 @@ public class Ordermodel implements Serializable{
 public String shippingaddress;
 	@Column
 	public String billingaddress;
+	@Column
+	public String username;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getOrderid() {
 		return orderid;
 	}

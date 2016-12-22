@@ -9,7 +9,7 @@
 <h1>this is billing</h1>
 <div class="container-fluid text-center">
 <div class="col-sm-4">
-<k:form method="post" commandName="shippingAddress">
+<k:form method="post" commandName="billingAddress">
 <k:input path="firstname" type="text" placeholder="firstname" ></k:input><br>
 <k:input path="lastname" type="text" placeholder="lastname" ></k:input><br>
 <k:input path="address_line1" type="text" placeholder="address_line1" ></k:input><br>

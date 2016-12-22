@@ -73,6 +73,21 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+<%--   this is product part
+  <k:forEach items="${getprodlist}" var="pros"> 
+    <div class="col-sm-3">
+<div class="well" >
+ <a href="displaycat?proid=${cat.catid}"></a>
+  <b>${pros.proname}</b><br>
+   <a href="gotocart?proid=${pro.proid }">
+  <img alt="${pros.proname}" src="images/${pros.proid}.jpg" data-toggle="tooltip" title="${pros.prodesc }"></a> <br>
+ <div style="margin-top:5px;"> <b style="color:black;">Rs.${pros.proprice}/Kg</b></div><br>
+<!--  Quantity: <input min=1 max=10 type="number" id="myNumber"><br><br> -->
+  <div class="button"  style="vertical-align:middle" ><a href="buying"><span class="fa fa-inr" aria-hidden="true ">&nbsp BUY </span></a> </div><br>
+    <div class="buttons"  style="vertical-align:middle"> <a href="addtocart?proid=${pros.proid }"><span class="glyphicon glyphicon-shopping-cart">ADD TO CART</a></span></div>
+     
+     </div>
+     </div> </k:forEach> --%>
 </div>
 
 

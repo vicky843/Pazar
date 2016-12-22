@@ -1,5 +1,4 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="k" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-this is order display page
+<%-- this is order display page
 <div class="container">
  <div class="panel-group">
 <div class="panel panel-default">
@@ -23,9 +22,7 @@ this is order display page
 <div class="panel-body">
   
 <k:set var="ship" value='<%=session.getAttribute("shipaddress")%>' ></k:set>
-<k:set var="user" value='<%=session.getAttribute("userid")%>' ></k:set>
-    ${user}
-    <br>
+
     ${ship.firstname }
    <br> ${ship.lastname }
    <br> ${ship.address_line1 }
@@ -35,17 +32,9 @@ this is order display page
   
   <br>  ${ship.city }
     its is present
-    
-    
-    
-    
-    
-    </div>
-    
-    </div>
-    
-    
-    </div></div>
+ </div>
+      </div>
+  </div></div>
     
     
     <div class="col-sm-6 ">
@@ -54,10 +43,8 @@ this is order display page
 <b>Billing Details</b>
 <div class="panel-body">
 <k:set var="bill" value='<%=session.getAttribute("billaddress")%>' ></k:set>
-<k:set var="user" value='<%=session.getAttribute("userid")%>' ></k:set>
 
-${user}<br>
-    <br>
+
     ${bill.firstname }
    <br> ${bill.lastname }
    <br> ${bill.address_line1 }
@@ -71,29 +58,17 @@ ${user}<br>
 </div>
 </div>
 </div>
-</div>
-<table class="table table-bordered table-hover" >
- 
-      <tr >
-        <th class="text-center" >Product</th>
-        <th class="text-center" >Quantity</th>
-        
-      </tr>
-      <k:forEach var="carts" items='<%session.getAttribute("getcartlist")%>'>
+</div> --%>
+<table class="table table-bordered table-hover table-striped" >
       <tr>
-      <td>
-      </td>
+      <th>Image</th>
+        <th >Productname</th>
+        <th >Quantity</th>
+          <th>Price</th>
       </tr>
-      </k:forEach>
-      
- </table>   
-    </div>
-  </div>
-</div>
+ 
 
-
-</div>
-
+</table>
 
 </body>
 </html>
