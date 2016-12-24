@@ -116,7 +116,7 @@ function myFunction() {
   <img alt="${pro.proname}" src="images/${pro.proid}.jpg" data-toggle="tooltip" title="${pro.prodesc }"></a> <br>
  <div style="margin-top:5px;"> <b style="color:black;">Rs.${pro.proprice}/Kg</b></div><br>
 <!--  Quantity: <input min=1 max=10 type="number" id="myNumber"><br><br> -->
-  <div class="button"  style="vertical-align:middle" ><a href="buying"><span class="fa fa-inr" aria-hidden="true ">&nbsp BUY </span></a> </div><br>
+ <!--  <div class="button"  style="vertical-align:middle" ><a href="buying"><span class="fa fa-inr" aria-hidden="true ">&nbsp BUY </span></a> </div><br> -->
     <div class="buttons"  style="vertical-align:middle"> <a href="addtocart?proid=${pro.proid }"><span class="glyphicon glyphicon-shopping-cart">ADD TO CART</a></span></div>
   
   </div>

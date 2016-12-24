@@ -21,9 +21,9 @@
 <k:when test="${home ==1 }">
 <jsp:include page="carousel.jsp"></jsp:include>
 </k:when>
-<k:when test="${clickuserpro == 1 }">
+<%-- <k:when test="${clickuserpro == 1 }">
 <jsp:include page="userproduct.jsp"></jsp:include>
-</k:when>
+</k:when> --%>
  <k:when test="${userprods == 1 }">
 <jsp:include page="userdispro.jsp"></jsp:include>
 

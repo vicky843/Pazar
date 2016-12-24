@@ -54,7 +54,7 @@ sess.setAttribute("prodss", prod);
 	@RequestMapping(value="/addtocart",method=RequestMethod.GET)
 	public String addcart(@RequestParam("proid") String pid, ModelMap m,HttpSession sess)
 	{
-		m.addAttribute("userprods",1);
+		m.addAttribute("cart",1);
 		String pattern="yyyy-MM-dd ";
 		System.out.println("this is in cart controller");
 //		/*Product pro=new Product();*/this will pass only address
@@ -86,6 +86,11 @@ cart.setProname(pro.getProname());
 System.out.println("cartid"+ThreadLocalRandom.current().nextLong(100,10000 +1));
 System.out.println("this is available for cart"+pro.getProprice());
 car.save(cart);
+//below lines will help us to navigate to cartpage with username
+String s=(String) sess.getAttribute("name");
+List<Cart>cartslist=car.getcartlist(s);
+System.out.println("this is cartdisplay");
+m.addAttribute("getcartlist",cartslist);
 
 System.out.println("username"+(String) sess.getAttribute("name"));
 System.out.println("cartview"+pro.getProprice());

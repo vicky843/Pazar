@@ -4,8 +4,90 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+.button {                                    
+  display: inline-block;
+  border-radius: 4px;
+  background-color: wheat;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 22px;
+ padding: 14px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.buttons {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: wheat;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 22px;
+ padding: 14px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.buttons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttons:hover span {
+  padding-right: 25px;
+}
+
+.buttons:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 </head>
 <body>
+
 <h1>this is in cart page</h1>
 <div class="col-sm-12">
 
@@ -60,8 +142,10 @@
 </tr>
 </k:forEach>
 	</table>
+
+	 <div class="buttons pull-left text-center"  style="vertical-align:middle" ><a href="home"><span class="fa fa-inr" aria-hidden="true ">Continue Shopping </span></a> </div><br>
+
+	 <div class="button pull-right"  style="vertical-align:middle" ><a href="buying"><span class="fa fa-inr" aria-hidden="true ">&nbsp BUY </span></a> </div><br>
 </div>
-
-
 </body>
 </html>
